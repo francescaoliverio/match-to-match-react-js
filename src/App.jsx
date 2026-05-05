@@ -1,13 +1,13 @@
-import Button from "./components/Button"
+import PeopleGrid from "./components/PeopleGrid";
 
 function App() {
-
   return (
     <>
-    <h1>Match to Match</h1>
-    <p>Ready, steady, go!</p>
+      <h1>Match to Match</h1>
+      <p>Ready, steady, go!</p>
+      <PeopleGrid />
     </>
-  )
+  );
 }
 
-export default App
+export default App;

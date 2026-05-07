@@ -1,8 +1,9 @@
 import { useState } from "react";
-function Button({ title, classes, handleClick }) {
+function Button({ label, classes, handleClick, children }) {
   return (
     <button onClick={handleClick} className={`btn ${classes}`}>
-      {title}
+      {children}
+      {label}
     </button>
   )
 }

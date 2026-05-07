@@ -15,10 +15,10 @@ Obiettivo:
   - per ora solo presentazione, poi vediamo se renderlo funzionante
 
 ## TO DO
-1. cartella assets con tutte le immagini
+1. cartella assets con tutte le immagini 
 1. top navbar
 1. bottom navbar
-1. card
+1. card  
 1. button
 1. searchbar
 1. style: padding, color, typo, border, background

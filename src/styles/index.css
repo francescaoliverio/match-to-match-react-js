@@ -1,0 +1,59 @@
+/* ====================
+   ====== COLORS ======
+   ==================== */
+
+:root {
+  /* Brand */
+  --primary: #FF6219;
+  --primary-hover: #FF7433;
+  --primary-disabled: #A38475;
+  --secondary: #FFBB00;
+  --secondary-hover: #FFC21A;
+  --secondary-disabled: #998B66;
+  --tertiary: #553377;
+  --tertiary-hover: #613A88;
+  --tertiary-disabled: #554D5E;
+  /* Greys */
+  --grey-lighter: #E2E2E2;
+  --grey-light: #A2A2A2;
+  --grey-dark: #4A4A4A;
+  --grey-darker: #2A2A2A;
+  /* Text */
+  --text-dark: #222222;
+  --text-light: #FFFFFF;
+  /* Background */
+  --bg-light: #FFFFFF;
+  --bg-dark: #222222;
+  /* Transparent */
+  --bg-dark-overlay: #0000001A;
+  --bg-transparent-nav: #FFFFFFE6;
+  --bg-transparent-white: #FFFFFFB2;
+  --bg-transparent-tertiary: #553377B2;
+  --bg-transparent-secondary: #FFBB00B2; 
+  /* Border */
+  --border-color: var(--grey-light);
+}
+
+/* ====================
+   ==== TYPOGRAPHY ====
+   ==================== */
+@import url('https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+  /* Headings */
+  --font-gabarito: "Gabarito", "Lexend", "Century Gothic", AppleGothic, sans-serif;
+  /* Content */
+  --font-hanken-grotesk: "Hanken Grotesk", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/* ----- Headings ----- */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: bold;
+}
+h1 {font-size: 4rem;}
+h2 {font-size: 2.5rem;}
+h3 {font-size: 1.5rem;}
+h4 {font-size: 1.25rem;}
+h5 {font-size: 1rem;}
+h6 {font-size: 0.85rem;}
+

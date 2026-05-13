@@ -6,8 +6,7 @@ function App() {
     <>
       <h1>Match to Match</h1>
       <p>Ready, steady, go!</p>
-      <SearchBar />
-      <br/>
+      
       <MatchSearch />
     </>
   );

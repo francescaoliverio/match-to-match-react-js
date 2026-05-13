@@ -12,7 +12,7 @@ export default function MatchSearch() {
       <CategoryOutlinedIcon /><SearchBar placeholder="What..." />
       <PlaceOutlinedIcon /><SearchBar placeholder="Where..." />
       <CalendarTodayOutlinedIcon /><SearchBar placeholder="When..." />
-      {/* <Button /> <SearchOutlinedIcon /> */}
+      {/* <Button className="btn-primary-filled" /> <SearchOutlinedIcon /> */}
     </>
   );
 }

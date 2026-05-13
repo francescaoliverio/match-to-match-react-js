@@ -36,31 +36,85 @@ import ChatBubbleOutlinedIcon from "@mui/icons-material/ChatBubbleOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 // -- filled
 import PersonIcon from "@mui/icons-material/Person";
-
-// add
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
-
-// calendar
-import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
-
-// category
-import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
-
-// 🔎 search
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 ```
 
 ## Generali
 ```js
-// add
+// ➕ add
 import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
 
-// calendar
+// ◀️ arrow-back
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
+
+// ▶️ arrow-forward
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
+
+// 🚴 bike
+import DirectionsBikeOutlinedIcon from '@mui/icons-material/DirectionsBikeOutlined';
+
+// 📆 calendar
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 
-// category
+// 🔷 category
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
+
+// ✔️ check
+import CheckOutlinedIcon from '@mui/icons-material/CheckOutlined';
+
+// ✖️ close
+import CloseOutlinedIcon from '@mui/icons-material/CloseOutlined';
+
+// 🎲 die
+import CasinoOutlinedIcon from '@mui/icons-material/CasinoOutlined';
+
+// ♥️ favourite
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
+
+// 🧮 filter
+import FilterListOutlinedIcon from '@mui/icons-material/FilterListOutlined';
+
+// 🔥 fire
+import LocalFireDepartmentOutlinedIcon from '@mui/icons-material/LocalFireDepartmentOutlined';
+
+// 🏠 home
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+
+// 📍 location
+import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
+
+// 🟰 menu
+import MenuOutlinedIcon from '@mui/icons-material/MenuOutlined';
+
+// (…) more
+import MoreHorizOutlinedIcon from '@mui/icons-material/MoreHorizOutlined';
+
+// (:) more
+import MoreVertOutlinedIcon from '@mui/icons-material/MoreVertOutlined';
+
+// 🌲 nature
+import ParkOutlinedIcon from '@mui/icons-material/ParkOutlined';
+
+// 🧩 puzzle
+import ExtensionOutlinedIcon from '@mui/icons-material/ExtensionOutlined';
 
 // 🔎 search
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
+
+// ⚙️ settimgs
+import SettingsOutlinedIcon from '@mui/icons-material/SettingsOutlined';
+
+// ⚾ sports
+import SportsBaseballOutlinedIcon from '@mui/icons-material/SportsBaseballOutlined';
+
+// 🏆 trophy
+import EmojiEventsOutlinedIcon from '@mui/icons-material/EmojiEventsOutlined';
+
+// 🎚️ tune
+import TuneOutlinedIcon from '@mui/icons-material/TuneOutlined';
+
+// 🎮 videogames
+import SportsEsportsOutlinedIcon from '@mui/icons-material/SportsEsportsOutlined';
+
+// 🔶 widgets
+import WidgetsOutlinedIcon from '@mui/icons-material/WidgetsOutlined';
 ```

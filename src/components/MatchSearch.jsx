@@ -1,5 +1,5 @@
 import SearchBar from "./SearchBar";
-// import Button from '../components/Button'
+import Button from '../components/Button'
 
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
@@ -12,7 +12,7 @@ export default function MatchSearch() {
       <CategoryOutlinedIcon /><SearchBar placeholder="What..." />
       <PlaceOutlinedIcon /><SearchBar placeholder="Where..." />
       <CalendarTodayOutlinedIcon /><SearchBar placeholder="When..." />
-      {/* <Button className="btn-primary-filled" /> <SearchOutlinedIcon /> */}
+      <Button label="search" classes="btn-primary-filled"> <SearchOutlinedIcon /></Button>
     </>
   );
 }

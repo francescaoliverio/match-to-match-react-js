@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 // 🧭 explore
 // -- outlined
 import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
@@ -24,13 +26,12 @@ import PersonIcon from "@mui/icons-material/Person";
 
 export default function BottomNavBar({currentPage}){
     return(
-        <>
         <nav>
-            <a href="#explore">{(currentPage === "explore" ? <ExploreIcon/> : <ExpoloreOutlinedIcon/>)}</a>
-            <a href="#match">{(currentPage === "match" ? <HandshakeIcon/> : <HandshakeOutlinedIcon/>)}</a>
-            <a href="#chat">{(currentPage === "chat" ? <ChatBubbleOutlinedIcon/> : <ChatBubbleOutlineOutlinedIcon/>)}</a>
-            <a href="#profile">{(currentPage === "profile" ? <PersonIcon/> : <PersonOutlinedIcon/>)}</a>
+            <NavLink to="/">{(currentPage === "explore" ? <ExploreIcon/> : <ExpoloreOutlinedIcon/>)}</NavLink>
+            <NavLink to="/match">{(currentPage === "match" ? <HandshakeIcon/> : <HandshakeOutlinedIcon/>)}</NavLink>
+            <NavLink to="/chat">{(currentPage === "chat" ? <ChatBubbleOutlinedIcon/> : <ChatBubbleOutlineOutlinedIcon/>)}</NavLink>
+            <NavLink to="/profile">{(currentPage === "profile" ? <PersonIcon/> : <PersonOutlinedIcon/>)}</NavLink>
+            <NavLink to="/profile/login">Login</NavLink>
         </nav>
-        </>
     )
 }

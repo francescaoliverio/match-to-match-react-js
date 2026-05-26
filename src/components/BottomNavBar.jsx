@@ -27,7 +27,7 @@ import PersonIcon from "@mui/icons-material/Person";
 export default function BottomNavBar({currentPage}){
     return(
         <nav>
-            <NavLink to="/">{(currentPage === "explore" ? <ExploreIcon/> : <ExpoloreOutlinedIcon/>)}</NavLink>
+            <NavLink to="/">{(currentPage === "explore" ? <ExploreIcon/> : <ExploreOutlinedIcon/>)}</NavLink>
             <NavLink to="/match">{(currentPage === "match" ? <HandshakeIcon/> : <HandshakeOutlinedIcon/>)}</NavLink>
             <NavLink to="/chat">{(currentPage === "chat" ? <ChatBubbleOutlinedIcon/> : <ChatBubbleOutlineOutlinedIcon/>)}</NavLink>
             <NavLink to="/profile">{(currentPage === "profile" ? <PersonIcon/> : <PersonOutlinedIcon/>)}</NavLink>

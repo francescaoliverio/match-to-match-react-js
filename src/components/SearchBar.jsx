@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SearchBar({placeholder}) {
+export default function SearchBar({placeholder, children}) {
   const[input, setNewInput] = useState("");
 
   function handleChangeInput(t) {

@@ -2,8 +2,6 @@ import { cn } from "../lib/utils";
 
 // import "../styles/Button.css";
 
-import { useState } from "react";
-
 const BASE_STYLES = "flex items-center justify-center gap-5 px-5 py-2.5 rounded-full w-fit font-bold cursor-pointer";
 
 const VARIANT_STYLES = {

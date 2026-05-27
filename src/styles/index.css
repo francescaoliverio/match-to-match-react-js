@@ -14,23 +14,22 @@
   --color-tertiary: #553377;
   --color-tertiary-hover: #613a88;
   --color-tertiary-disabled: #554d5e;
+  --color-light: #ffffff;
+  --color-light-hover: #e2e2e2;
+  --color-light-disabled: #a2a2a2;
   /* Greys */
   --color-grey-lighter: #e2e2e2;
   --color-grey-light: #a2a2a2;
   --color-grey-dark: #4a4a4a;
   --color-grey-darker: #2a2a2a;
   /* Text */
-  --color-text-dark: #222222;
-  --color-text-light: #ffffff;
-  /* Background */
-  --color-bg-light: #ffffff;
-  --color-bg-dark: #222222;
+  --color-ink: #222222;
   /* Transparent */
-  --color-bg-dark-overlay: #0000001a;
-  --color-bg-transparent-nav: #ffffffe6;
-  --color-bg-transparent-white: #ffffffb2;
-  --color-bg-transparent-tertiary: #553377b2;
-  --color-bg-transparent-secondary: #ffbb00b2;
+  --color-dark-overlay: #0000001a;
+  --color-transparent-nav: #ffffffe6;
+  --color-transparent-white: #ffffffb2;
+  --color-transparent-tertiary: #553377b2;
+  --color-transparent-secondary: #ffbb00b2;
   /* Border */
   --color-border: #a2a2a2; /* grey-light */
   --radius-card: 1.25rem; /* 20px */
@@ -44,6 +43,7 @@
 
 html {
   font-family: var(--font-family-content);
+  color: var(--color-ink);
 }
 h1,
 h2,

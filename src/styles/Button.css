@@ -9,21 +9,21 @@ button,
   gap: 1.25rem;
   padding: 0.625rem 1.25rem;
   border-radius: 4rem;
-  background-color: var(--color-bg-light, #FFFFFF);
-  color: var(--color-text-dark, #222222);
+  background-color: var(--color-light, #FFFFFF);
+  color: var(--color-ink, #222222);
   width: fit-content;
   font-weight: 700;
 }
 /* Primary */
-.btn-primary-filled {background-color: var(--color-primary); color: var(--color-text-light);}
+.btn-primary-filled {background-color: var(--color-primary); color: var(--color-light);}
 .btn-primary-filled:hover {background-color: var(--color-primary-hover);}
 .btn-primary-filled:disabled {background-color: var(--color-primary-disabled);}
 /* Secondary */
-.btn-secondary-filled {background-color: var(--color-secondary); color: var(--color-text-dark);}
+.btn-secondary-filled {background-color: var(--color-secondary); color: var(--color-ink);}
 .btn-secondary-filled:hover {background-color: var(--color-secondary-hover);}
 .btn-secondary-filled:disabled {background-color: var(--color-secondary-disabled);}
 /* Tertiary */
-.btn-tertiary-filled {background-color: var(--color-tertiary); color: var(--color-text-light);}
+.btn-tertiary-filled {background-color: var(--color-tertiary); color: var(--color-light);}
 .btn-tertiary-filled:hover {background-color: var(--color-tertiary-hover);}
 .btn-tertiary-filled:disabled {background-color: var(--color-tertiary-disabled);}
 /* Light */

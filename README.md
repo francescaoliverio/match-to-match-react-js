@@ -22,3 +22,21 @@ Obiettivo:
 1. button
 1. searchbar
 1. style: padding, color, typo, border, background
+
+## COMMIT message conventions:
+
+[This commit will...]  "tipo(cosa): descrizione breve" (max 50ch)
+
+| Tipo | Quando si usa | Esempio |
+|------|---------------|---------|
+| `feat` | Nuova funzionalità visibile all'utente | aggiungere la pagina profilo |
+| `fix` | Correzione di un bug | bottone che non rispondeva al click |
+| `refactor` | Riscrittura di codice esistente senza cambiare comportamento | rinominare variabili, estrarre un componente |
+| `style` | Formattazione pura, zero logica | indentazione, virgole, punto e virgola |
+| `docs` | Solo documentazione | aggiornare il README |
+| `test` | Aggiungere o correggere test | aggiungere unit test al Button |
+| `build` | Dipendenze e sistema di build | modificare vite.config, aggiornare npm |
+| `chore` | Manutenzione generica che non entra in nessuna delle altre | aggiornare .gitignore, rinominare cartelle |
+| `ci` | Pipeline CI/CD | modificare GitHub Actions |
+| `perf` | Ottimizzazione delle performance | ridurre re-render, lazy loading |
+| `revert` | Annullare un commit precedente | — |

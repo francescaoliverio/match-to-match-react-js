@@ -40,34 +40,43 @@
   --radius-card: 1.25rem; /* 20px */
 }
 
-html {
-  font-family: var(--font-content);
-  color: var(--color-ink);
-}
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 900;
-  font-family: var(--font-heading);
-}
-h1 {
-  font-size: 4rem;
-}
-h2 {
-  font-size: 2.5rem;
-}
-h3 {
-  font-size: 1.5rem;
-}
-h4 {
-  font-size: 1.25rem;
-}
-h5 {
-  font-size: 1rem;
-}
-h6 {
-  font-size: 0.85rem;
+@layer base {
+  html {
+    font-family: var(--font-content);
+    color: var(--color-ink);
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-weight: 900;
+    font-family: var(--font-heading);
+  }
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 1.25rem;
+  }
+  h5 {
+    font-size: 1rem;
+  }
+  h6 {
+    font-size: 0.85rem;
+  }
+  * {
+    transition: color 300ms ease-in-out, background-color 200ms ease-in-out;
+  }
+  body {
+    background-image: url(../assets/images/background/friends.jpg);
+    background-size: cover;
+  }
 }

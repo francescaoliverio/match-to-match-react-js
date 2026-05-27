@@ -1,5 +1,7 @@
+import "../styles/Button.css"
 import { useState } from "react";
-function Button({ label, classes, handleClick, children }) {
+
+export default function Button({ label, classes, handleClick, children }) {
   return (
     <button onClick={handleClick} className={`btn ${classes}`}>
       {children}
@@ -7,5 +9,3 @@ function Button({ label, classes, handleClick, children }) {
     </button>
   )
 }
-
-export default Button;

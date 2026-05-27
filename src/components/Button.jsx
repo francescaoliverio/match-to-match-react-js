@@ -2,7 +2,7 @@ import { cn } from "../lib/utils";
 
 // import "../styles/Button.css";
 
-const BASE_STYLES = "flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full w-fit font-bold cursor-pointer";
+const BASE_STYLES = "flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full w-fit font-bold cursor-pointer cursor-pointer disabled:cursor-default";
 
 const VARIANT_STYLES = {
   primary: "text-light bg-primary hover:bg-primary-hover disabled:bg-primary-disabled",
@@ -11,7 +11,7 @@ const VARIANT_STYLES = {
   light: "text-tertiary bg-light hover:bg-light-hover disabled:bg-light-disabled",
 };
 
-export default function Button({ label, variant="primary", className, handleClick, children, ...props }) {
+export default function Button({ label, variant="light", className, handleClick, children, ...props }) {
   return (
     <button onClick={handleClick} className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
       {children}

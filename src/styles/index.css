@@ -41,7 +41,7 @@
 }
 
 html {
-  font-family: var(--font-family-content);
+  font-family: var(--font-content);
   color: var(--color-ink);
 }
 h1,
@@ -51,7 +51,7 @@ h4,
 h5,
 h6 {
   font-weight: 900;
-  font-family: var(--font-family-heading);
+  font-family: var(--font-heading);
 }
 h1 {
   font-size: 4rem;

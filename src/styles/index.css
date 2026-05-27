@@ -1,10 +1,13 @@
 @import "tailwindcss";
 
-@import "./m2m-destyle.css" layer(base);
-
-@import url("https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap");
 
 @theme {
+  /* ========== TYPOGRAPHY ========== */
+  /* Headings */
+  --font-heading: "Gabarito", "Lexend", "Century Gothic", AppleGothic, sans-serif;
+  /* Content */
+  --font-content: "Hanken Grotesk", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  
   /* ========== COLORS ========== */
   /* Brand */
   --color-primary: #ff6219;
@@ -35,12 +38,6 @@
   /* Border */
   --color-border: #a2a2a2; /* grey-light */
   --radius-card: 1.25rem; /* 20px */
-
-  /* ========== TYPOGRAPHY ========== */
-  /* Headings */
-  --font-family-heading: "Gabarito", "Lexend", "Century Gothic", AppleGothic, sans-serif;
-  /* Content */
-  --font-family-content: "Hanken Grotesk", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 html {

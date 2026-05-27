@@ -2,7 +2,7 @@ import { cn } from "../lib/utils";
 
 // import "../styles/Button.css";
 
-const BASE_STYLES = "flex items-center justify-center gap-5 px-5 py-2.5 rounded-full w-fit font-bold cursor-pointer";
+const BASE_STYLES = "flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full w-fit font-bold cursor-pointer";
 
 const VARIANT_STYLES = {
   primary: "text-light bg-primary hover:bg-primary-hover disabled:bg-primary-disabled",

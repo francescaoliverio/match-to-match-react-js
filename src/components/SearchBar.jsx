@@ -6,6 +6,7 @@ const BASE_STYLES = "flex items-center justify-center px-5 py-2.5 rounded-full w
 
 const VARIANT_STYLES = {
   transparent: "text-ink bg-transparent-white",
+  white: "text-ink bg-white",
 };
 
 export default function SearchBar({placeholder, variant="transparent", className, id, children, ...props}) {

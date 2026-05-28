@@ -15,10 +15,10 @@ export default function MatchSearch() {
   }
 
   return (
-    <div className="bg-transparent-tertiary flex items-center justify-center p-5 gap-5 rounded-full w-fit">
+    <div className="bg-transparent-tertiary flex items-center justify-center p-3.5 gap-5 rounded-full w-fit">
       <div onClick={() => handleClick("what")}>
         {active === "what" ? (
-          <SearchBar id="what" placeholder="what..." className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+          <SearchBar id="what" placeholder="what..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
             <label htmlFor="what" className="text-tertiary">
               <CategoryOutlinedIcon color="inherit" />
             </label>
@@ -31,7 +31,7 @@ export default function MatchSearch() {
       </div>
       <div onClick={() => handleClick("where")}>
         {active === "where" ? (
-          <SearchBar id="where" placeholder="where..." className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+          <SearchBar id="where" placeholder="where..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
             <label htmlFor="where" className="text-tertiary">
               <PlaceOutlinedIcon color="inherit" />
             </label>
@@ -44,7 +44,7 @@ export default function MatchSearch() {
       </div>
       <div onClick={() => handleClick("when")}>
         {active === "when" ? (
-          <SearchBar id="when" placeholder="when..." className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+          <SearchBar id="when" placeholder="when..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
             <label htmlFor="when" className="text-tertiary">
               <CalendarTodayOutlinedIcon color="inherit" />
             </label>

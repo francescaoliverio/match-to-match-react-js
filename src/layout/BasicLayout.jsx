@@ -4,7 +4,7 @@ import BottomNavBar from "../components/BottomNavBar";
 export default function BasicLayout() {
   return (
     <>
-      <main  className="flex flex-col grow items-center justify-start p-10">
+      <main  className="flex flex-col grow items-center justify-start overflow-scroll">
         <Outlet/>
       </main>
         <BottomNavBar />

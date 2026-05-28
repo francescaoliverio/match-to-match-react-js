@@ -8,7 +8,7 @@ const VARIANT_STYLES = {
   transparent: "text-ink bg-transparent-white",
 };
 
-export default function SearchBar({placeholder, variant="transparent", className, children, ...props}) {
+export default function SearchBar({placeholder, variant="transparent", className, id, children, ...props}) {
   const[input, setInput] = useState("");
 
   function handleChangeInput(i) {
@@ -17,7 +17,7 @@ export default function SearchBar({placeholder, variant="transparent", className
 
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
-      <input type="text" value={input} onChange={handleChangeInput} placeholder={placeholder} className="outline-none" />
+      <input id={id} type="text" value={input} onChange={handleChangeInput} placeholder={placeholder} className="outline-none" />
       {children}
     </div>
   );

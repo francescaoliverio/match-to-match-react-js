@@ -9,11 +9,9 @@ import Login from "./components/Login";
 
 export default function App() {
   return (
-    <>
-      <h1>Match to Match</h1>
-      <p>Ready, steady, go!</p>
+    <div className="min-h-screen flex flex-col items-stretch">
       <RouterProvider router={router} />
-    </>
+    </div>
   );
 }
 

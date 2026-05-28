@@ -1,7 +1,10 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useRef } from "react";
+import Button from "./Button";
 
-export default function Login() {
+const inputStyle = "bg-white text-tertiary focus:outline-tertiary flex items-center px-5 py-2.5 rounded-full w-fit disabled:cursor-default"
+
+export default function LoginForm() {
   const navigate = useNavigate();
   const usernameRef = useRef(null);
   const passwordRef = useRef(null);
@@ -38,15 +41,17 @@ export default function Login() {
   }
 
   return (
-    <>
-      <h1>Login</h1>
-      <form onSubmit={submitForm}>
-        <label htmlFor="username">Username:</label>
-        <input ref={usernameRef} id="username" type="text" placeholder="Username" />
-        <label htmlFor="password">Password:</label>
-        <input ref={passwordRef} id="password" type="password" placeholder="Password" />
-        <button>Accedi</button>
+    <div className="flex flex-col items-center gap-2.5 p-5 bg-transparent-tertiary text-white rounded-2xl">
+      {/* Profile picture */}
+      <div className="w-20 h-20 rounded-full flex justify-center items-center bg-grey-lighter">S</div>
+      <form onSubmit={submitForm} className="flex flex-col items-center gap-5">
+        <label htmlFor="username" className="hidden">Username:</label>
+        <input ref={usernameRef} id="username" type="text" placeholder="Username" className={inputStyle}/>
+        <label htmlFor="password" className="hidden">Password:</label>
+        <input ref={passwordRef} id="password" type="password" placeholder="Password"  className={inputStyle}/>
+        <Link to="">password dimenticata?</Link>
+        <Link to="/profile"><Button label="Accedi" variant="primary"/></Link>
       </form>
-    </>
+    </div>
   );
 }

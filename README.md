@@ -15,10 +15,17 @@ Obiettivo:
   - per ora solo presentazione, poi vediamo se renderlo funzionante
 
 ## TO DO
-1. cartella assets con tutte le immagini
 1. top navbar
+1. style: padding, color, typo, border, background
+1. context per stato logged 
+1. form login > Franci
+1. explore > Gaia 
+1. chat > Fabio
+1. match > Alessia
+
+## DONE
+1. cartella assets con tutte le immagini
 1. bottom navbar
 1. card
 1. button
 1. searchbar
-1. style: padding, color, typo, border, background

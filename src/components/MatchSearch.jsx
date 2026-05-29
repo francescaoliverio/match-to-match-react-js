@@ -1,18 +1,63 @@
+import { useState } from "react";
+
 import SearchBar from "./SearchBar";
 import Button from '../components/Button'
-
 import CategoryOutlinedIcon from "@mui/icons-material/CategoryOutlined";
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 
 export default function MatchSearch() {
+  const [active, setActive] = useState("what")
+
+  function handleClick(target) {
+    setActive(target)
+  }
+
   return (
-    <>
-      <CategoryOutlinedIcon /><SearchBar placeholder="What..." />
-      <PlaceOutlinedIcon /><SearchBar placeholder="Where..." />
-      <CalendarTodayOutlinedIcon /><SearchBar placeholder="When..." />
-      <Button label="search" classes="btn-primary-filled"> <SearchOutlinedIcon /></Button>
-    </>
+    <div className="bg-transparent-tertiary flex items-center justify-center p-3.5 gap-5 rounded-full w-fit">
+      <div onClick={() => handleClick("what")}>
+        {active === "what" ? (
+          <SearchBar id="what" placeholder="what..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+            <label htmlFor="what" className="text-tertiary">
+              <CategoryOutlinedIcon color="inherit" />
+            </label>
+          </SearchBar>
+        ) : (
+          <label htmlFor="what" className="text-transparent-white">
+            <CategoryOutlinedIcon color="inherit" />
+          </label>
+        )}
+      </div>
+      <div onClick={() => handleClick("where")}>
+        {active === "where" ? (
+          <SearchBar id="where" placeholder="where..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+            <label htmlFor="where" className="text-tertiary">
+              <PlaceOutlinedIcon color="inherit" />
+            </label>
+          </SearchBar>
+        ) : (
+          <label htmlFor="where" className="text-transparent-white">
+            <PlaceOutlinedIcon color="inherit" />
+          </label>
+        )}
+      </div>
+      <div onClick={() => handleClick("when")}>
+        {active === "when" ? (
+          <SearchBar id="when" placeholder="when..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+            <label htmlFor="when" className="text-tertiary">
+              <CalendarTodayOutlinedIcon color="inherit" />
+            </label>
+          </SearchBar>
+        ) : (
+          <label htmlFor="when" className="text-transparent-white">
+            <CalendarTodayOutlinedIcon color="inherit" />
+          </label>
+        )}
+      </div>
+      <Button label="search" variant="primary">
+        <SearchOutlinedIcon />
+      </Button>
+    </div>
   );
 }

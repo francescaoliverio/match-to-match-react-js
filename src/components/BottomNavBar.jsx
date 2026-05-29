@@ -24,14 +24,15 @@ import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 // -- filled
 import PersonIcon from "@mui/icons-material/Person";
 
+const navLinkStyle = "p-2.5"
+
 export default function BottomNavBar({currentPage}){
     return(
-        <nav>
-            <NavLink to="/">{(currentPage === "explore" ? <ExploreIcon/> : <ExploreOutlinedIcon/>)}</NavLink>
-            <NavLink to="/match">{(currentPage === "match" ? <HandshakeIcon/> : <HandshakeOutlinedIcon/>)}</NavLink>
-            <NavLink to="/chat">{(currentPage === "chat" ? <ChatBubbleOutlinedIcon/> : <ChatBubbleOutlineOutlinedIcon/>)}</NavLink>
-            <NavLink to="/profile">{(currentPage === "profile" ? <PersonIcon/> : <PersonOutlinedIcon/>)}</NavLink>
-            <NavLink to="/profile/login">Login</NavLink>
+        <nav className="bg-transparent-nav flex flex-row justify-around items-center text-2xl">
+            <NavLink to="/" className={navLinkStyle}>{(currentPage === "explore" ? <ExploreIcon fontSize="inherit"/> : <ExploreOutlinedIcon fontSize="inherit"/>)}</NavLink>
+            <NavLink to="/match" className={navLinkStyle}>{(currentPage === "match" ? <HandshakeIcon fontSize="inherit"/> : <HandshakeOutlinedIcon fontSize="inherit"/>)}</NavLink>
+            <NavLink to="/chat" className={navLinkStyle}>{(currentPage === "chat" ? <ChatBubbleOutlinedIcon fontSize="inherit"/> : <ChatBubbleOutlineOutlinedIcon fontSize="inherit"/>)}</NavLink>
+            <NavLink to="/profile" className={navLinkStyle}>{(currentPage === "profile" ? <PersonIcon fontSize="inherit"/> : <PersonOutlinedIcon fontSize="inherit"/>)}</NavLink>
         </nav>
     )
 }

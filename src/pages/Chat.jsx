@@ -22,7 +22,7 @@ export default function Chat() {
     <div>
       <h1>Chat</h1>
       <SearchBar placeholder="search">
-        <Button classes="btn-light-filled">
+      <Button variant="transparent" className="p-1.5">
           <SearchOutlinedIcon />
         </Button>
       </SearchBar>

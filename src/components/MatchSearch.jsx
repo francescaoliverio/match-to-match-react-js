@@ -24,7 +24,7 @@ export default function MatchSearch() {
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="what" className="text-transparent-white">
+          <label htmlFor="what" className="text-transparent-white hover:text-white">
             <CategoryOutlinedIcon color="inherit" />
           </label>
         )}
@@ -37,7 +37,7 @@ export default function MatchSearch() {
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="where" className="text-transparent-white">
+          <label htmlFor="where" className="text-transparent-white hover:text-white">
             <PlaceOutlinedIcon color="inherit" />
           </label>
         )}
@@ -50,7 +50,7 @@ export default function MatchSearch() {
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="when" className="text-transparent-white">
+          <label htmlFor="when" className="text-transparent-white hover:text-white">
             <CalendarTodayOutlinedIcon color="inherit" />
           </label>
         )}

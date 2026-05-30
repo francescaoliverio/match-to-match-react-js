@@ -2,7 +2,7 @@ import { useNavigate, Link } from "react-router-dom";
 import { useRef } from "react";
 import Button from "./Button";
 
-const inputStyle = "bg-white text-tertiary focus:outline-none focus:border-secondary border-transparent border-2 flex items-center px-5 py-2.5 rounded-full w-fit disabled:cursor-default"
+const inputStyle = "bg-white text-tertiary focus:outline-none focus:ring-2 ring-transparent-secondary flex items-center px-5 py-2.5 rounded-full w-fit shadow-md shadow-dark-overlay disabled:cursor-default"
 
 export default function LoginForm() {
   const navigate = useNavigate();
@@ -41,9 +41,9 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="flex flex-col items-center gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl">
+    <div className="flex flex-col items-center gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
       {/* Profile picture */}
-      <div className="w-20 h-20 rounded-full flex justify-center items-center bg-grey-lighter">S</div>
+      <div className="w-20 h-20 rounded-full flex justify-center items-center bg-grey-lighter"></div>
       <form onSubmit={submitForm} className="flex flex-col items-center gap-5">
         <label htmlFor="username" className="hidden">Username:</label>
         <input ref={usernameRef} id="username" type="text" placeholder="Username" className={inputStyle}/>

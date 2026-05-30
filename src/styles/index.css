@@ -73,7 +73,7 @@
     font-size: 0.85rem;
   }
   * {
-    transition: color 300ms ease-in-out, background-color 200ms ease-in-out;
+    transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
   }
   body {
     background-image: url(../assets/images/background/friends.jpg);

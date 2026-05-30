@@ -29,10 +29,10 @@ const navLinkStyle = "p-2.5"
 export default function BottomNavBar({currentPage}){
     return(
         <nav className="bg-transparent-nav flex flex-row justify-around items-center text-2xl">
-            <NavLink to="/" className={navLinkStyle}>{(currentPage === "explore" ? <ExploreIcon fontSize="inherit"/> : <ExploreOutlinedIcon fontSize="inherit"/>)}</NavLink>
-            <NavLink to="/match" className={navLinkStyle}>{(currentPage === "match" ? <HandshakeIcon fontSize="inherit"/> : <HandshakeOutlinedIcon fontSize="inherit"/>)}</NavLink>
-            <NavLink to="/chat" className={navLinkStyle}>{(currentPage === "chat" ? <ChatBubbleOutlinedIcon fontSize="inherit"/> : <ChatBubbleOutlineOutlinedIcon fontSize="inherit"/>)}</NavLink>
-            <NavLink to="/profile" className={navLinkStyle}>{(currentPage === "profile" ? <PersonIcon fontSize="inherit"/> : <PersonOutlinedIcon fontSize="inherit"/>)}</NavLink>
+            <NavLink to="/" className={navLinkStyle}>{({isActive}) => isActive ? <ExploreIcon fontSize="inherit"/> : <ExploreOutlinedIcon fontSize="inherit"/>}</NavLink>
+            <NavLink to="/match" className={navLinkStyle}>{({isActive}) => isActive ? <HandshakeIcon fontSize="inherit"/> : <HandshakeOutlinedIcon fontSize="inherit"/>}</NavLink>
+            <NavLink to="/chat" className={navLinkStyle}>{({isActive}) => isActive ? <ChatBubbleOutlinedIcon fontSize="inherit"/> : <ChatBubbleOutlineOutlinedIcon fontSize="inherit"/>}</NavLink>
+            <NavLink to="/profile" className={navLinkStyle}>{({isActive}) => isActive ? <PersonIcon fontSize="inherit"/> : <PersonOutlinedIcon fontSize="inherit"/>}</NavLink>
         </nav>
     )
 }

@@ -10,6 +10,7 @@ const VARIANT_STYLES = {
   hoverScale: "hover:scale-105 transition-transform motion-reduce:transition-none motion-reduce:hover:transform-none",
 };
 
+// Card: display picture, name and bio of provided person
 export default function Card({ person, className, variant = "none", ...props }) {
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
@@ -20,4 +21,19 @@ export default function Card({ person, className, variant = "none", ...props }) 
       </div>
     </div>
   );
+}
+
+// Card Skeleton: used while loading content
+export function CardSkeleton({ className, variant = "none", ...props }) {
+  return (
+    <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className, "cursor-wait")} {...props}>
+      <div className="w-full aspect-square bg-grey-lighter animate-pulse" />
+      <div className="flex flex-col justify-stretch gap-2.5 p-2.5 h-[5lh] animate-pulse">
+        <div className="bg-grey-lighter w-[50%] h-full rounded-full"></div>
+        <div className="bg-grey-lighter w-full h-full rounded-full"></div>
+        <div className="bg-grey-lighter w-[65%] h-full rounded-full"></div>
+        <div className="bg-grey-lighter w-[85%] h-full rounded-full"></div>
+      </div>
+    </div>
+  )
 }

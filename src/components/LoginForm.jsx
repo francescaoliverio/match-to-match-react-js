@@ -42,8 +42,10 @@ export default function LoginForm() {
 
   return (
     <div className="flex flex-col items-center gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
-      {/* Profile picture */}
-      <div className="w-20 h-20 rounded-full flex justify-center items-center bg-grey-lighter"></div>
+      {/* Logo */}
+      <div className="w-20 h-20 rounded-full flex justify-center items-center bg-tertiary">
+      <img src="/logo/logo-bg-transparent.svg" alt="Match to Match logo" className="w-12 h-12" />
+      </div>
       <form onSubmit={submitForm} className="flex flex-col items-center gap-5">
         <label htmlFor="username" className="hidden">Username:</label>
         <input ref={usernameRef} id="username" type="text" placeholder="Username" className={inputStyle}/>

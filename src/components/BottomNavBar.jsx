@@ -28,7 +28,7 @@ const navLinkStyle = "p-2.5"
 
 export default function BottomNavBar({currentPage}){
     return(
-        <nav className="bg-transparent-nav flex flex-row justify-around items-center text-2xl">
+        <nav className="bg-transparent-white backdrop-blur-sm z-10 flex flex-row justify-around items-center text-2xl">
             <NavLink to="/" className={navLinkStyle}>{({isActive}) => isActive ? <ExploreIcon fontSize="inherit"/> : <ExploreOutlinedIcon fontSize="inherit"/>}</NavLink>
             <NavLink to="/match" className={navLinkStyle}>{({isActive}) => isActive ? <HandshakeIcon fontSize="inherit"/> : <HandshakeOutlinedIcon fontSize="inherit"/>}</NavLink>
             <NavLink to="/chat" className={navLinkStyle}>{({isActive}) => isActive ? <ChatBubbleOutlinedIcon fontSize="inherit"/> : <ChatBubbleOutlineOutlinedIcon fontSize="inherit"/>}</NavLink>

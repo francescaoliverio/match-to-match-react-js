@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import BottomNavBar from "../components/BottomNavBar";
 
 const backgrounds = {
-  "/": "url('/images/background/selfie-03.webp')",
+  "/": "url('/images/background/friends.jpg')",
   "/match": "url('/images/background/friends-02.webp')",
   "/chat":  "url('/images/background/friends-01.webp')",
   "/profile": "url('/images/background/selfie-02.jpg')",
@@ -14,8 +14,8 @@ export default function BasicLayout() {
   const bgKey = bgPaths.find(key => pathname.startsWith(key)) ?? "/"
 
   return (
-    <div className="h-screen flex flex-col bg-cover bg-center" style={{ backgroundImage: backgrounds[bgKey] }}>
-      <main className="flex flex-col grow items-center justify-start overflow-scroll  bg-dark-overlay">
+    <div className="h-screen flex flex-col bg-cover bg-top" style={{ backgroundImage: backgrounds[bgKey] }}>
+      <main className="flex flex-col grow items-center justify-start overflow-scroll bg-light-overlay backdrop-saturate-120 backdrop-blur-[2px]">
         <Outlet />
       </main>
       <BottomNavBar />

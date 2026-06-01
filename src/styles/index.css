@@ -31,13 +31,14 @@
   --color-ink: #222222;
   /* Transparent */
   --color-dark-overlay: #0000001a;
+  --color-light-overlay: #ffffff1a;
   --color-transparent-nav: #ffffffe6;
   --color-transparent-white: #ffffffb2;
   --color-transparent-tertiary: #553377b2;
   --color-transparent-secondary: #ffbb00b2;
   /* Border */
-  --color-border: #a2a2a2; /* grey-light */
-  --radius-card: 1.25rem; /* 20px */
+  --color-border: #a2a2a2;
+  --radius-card: 1rem;
 }
 
 @layer base {

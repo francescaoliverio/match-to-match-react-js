@@ -1,4 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AuthProvider } from './context/AuthContext.jsx'
 
 import BasicLayout from "./layout/BasicLayout";
 import Explore from "./pages/Explore";
@@ -9,9 +10,11 @@ import Login from "./pages/Login";
 
 export default function App() {
   return (
-    <div className="h-screen flex flex-col items-stretch">
-      <RouterProvider router={router} />
-    </div>
+    <AuthProvider>
+      <div className="h-screen flex flex-col items-stretch">
+        <RouterProvider router={router} />
+      </div>
+    </AuthProvider>
   );
 }
 

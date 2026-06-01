@@ -5,7 +5,10 @@ import Card, {CardSkeleton} from "./Card"
 
 export default function UsersGrid({cols = 3, rows = 2}) {
   const limit = cols * rows
-  const gridTemplateColumns = {gridTemplateColumns: `repeat(${cols}, minmax(8rem, 12rem))`,}
+  const gridStyles = {
+    maxWidth: `${(cols * 12) + ((cols-1) * 2)}rem`,
+    gridTemplateColumns: `repeat(auto-fill, 12rem)`
+  }
   // store return values from useUsers()
   const { users, loading, error } = useUsers()
   // if error, return error
@@ -14,10 +17,9 @@ export default function UsersGrid({cols = 3, rows = 2}) {
       <p><strong>Error: </strong>{error}</p>
     </div>
     )
-
   // skeleton while loading: prevent rendering users.map before promise is resolved
   return (
-    <div className="grid gap-8 justify-center-safe" style={gridTemplateColumns}>
+    <div className="m-auto grid gap-8 justify-center-safe" style={gridStyles}>
       {loading
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
         : users.slice(1, limit+1).map((user) =>

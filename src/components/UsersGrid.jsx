@@ -3,7 +3,7 @@
 import { useUsers } from "../hooks/useUsers"
 import Card, {CardSkeleton} from "./Card"
 
-export default function UsersGrid({cols = 3, rows = 2}) {
+export default function UsersGrid({cols = 3, rows = 2, pending=false}) {
   const limit = cols * rows
   const gridStyles = {
     maxWidth: `${(cols * 12) + ((cols-1) * 2)}rem`,
@@ -23,7 +23,7 @@ export default function UsersGrid({cols = 3, rows = 2}) {
       {loading
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
         : users.slice(1, limit+1).map((user) =>
-            <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />
+            <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} buttons={pending} variant="hoverScale" />
           )
       }
     </div>

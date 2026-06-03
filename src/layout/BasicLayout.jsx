@@ -15,7 +15,7 @@ export default function BasicLayout() {
 
   return (
     <div className="h-screen flex flex-col bg-cover bg-top" style={{ backgroundImage: backgrounds[bgKey] }}>
-      <main className="flex flex-col grow items-center justify-start overflow-scroll bg-light-overlay backdrop-saturate-120 backdrop-blur-[2px]">
+      <main className="flex flex-col grow items-center justify-start overflow-auto bg-light-overlay backdrop-saturate-120 backdrop-blur-[2px]">
         <Outlet />
       </main>
       <BottomNavBar />

@@ -20,7 +20,7 @@ export default function Explore() {
       <div className="p-5 self-stretch">
         <h3>Ready to Match?</h3>
         <p>Proposte di match per te</p>
-        <UsersGrid limit={10} />
+        <UsersGrid cols={4} rows={2}/>
       </div>
       <div>
         <h3>Explore the map</h3>

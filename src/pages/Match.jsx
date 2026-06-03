@@ -6,7 +6,7 @@ export default function Match() {
     <>
       <h1>Match</h1>
       <div className="p-5 self-stretch">
-        <UsersGrid limit={8}/>
+        <UsersGrid cols={3} rows={2}/>
       </div>
     </>
   );

@@ -19,12 +19,12 @@ export default function MatchSearch() {
       <div onClick={() => handleClick("what")}>
         {active === "what" ? (
           <SearchBar id="what" placeholder="what..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
-            <label htmlFor="what" className="text-tertiary">
+            <label htmlFor="what" className="text-tertiary hover:cursor-pointer">
               <CategoryOutlinedIcon color="inherit" />
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="what" className="text-transparent-white hover:text-white">
+          <label htmlFor="what" className="text-transparent-white hover:text-white hover:cursor-pointer">
             <CategoryOutlinedIcon color="inherit" />
           </label>
         )}
@@ -32,12 +32,12 @@ export default function MatchSearch() {
       <div onClick={() => handleClick("where")}>
         {active === "where" ? (
           <SearchBar id="where" placeholder="where..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
-            <label htmlFor="where" className="text-tertiary">
+            <label htmlFor="where" className="text-tertiary hover:cursor-pointer">
               <PlaceOutlinedIcon color="inherit" />
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="where" className="text-transparent-white hover:text-white">
+          <label htmlFor="where" className="text-transparent-white hover:text-white hover:cursor-pointer">
             <PlaceOutlinedIcon color="inherit" />
           </label>
         )}
@@ -45,12 +45,12 @@ export default function MatchSearch() {
       <div onClick={() => handleClick("when")}>
         {active === "when" ? (
           <SearchBar id="when" placeholder="when..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
-            <label htmlFor="when" className="text-tertiary">
+            <label htmlFor="when" className="text-tertiary hover:cursor-pointer">
               <CalendarTodayOutlinedIcon color="inherit" />
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="when" className="text-transparent-white hover:text-white">
+          <label htmlFor="when" className="text-transparent-white hover:text-white hover:cursor-pointer">
             <CalendarTodayOutlinedIcon color="inherit" />
           </label>
         )}

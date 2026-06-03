@@ -7,6 +7,7 @@ import Match from "./pages/Match";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 export default function App() {
   return (
@@ -23,6 +24,7 @@ const router = createBrowserRouter([
     path: "/",
     element: <BasicLayout />,
     children: [
+      { path: "*", element: <NotFound /> },
       { index: true, element: <Explore /> },
       { path: "match", element: <Match /> },
       { path: "chat", element: <Chat /> },

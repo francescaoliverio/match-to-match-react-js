@@ -1,27 +1,31 @@
-// src/components/UsersGrid.jsx
+// src/components/CategoriesGrid.jsx
 
 import { useCategories } from "../hooks/useCategories"
-import CardCategories from "./CardCategories"
+import Card, {CardSkeleton} from "./Card"
 
-export default function CategoriesGrid({limit}) {
-  const gridTemplate = {
-    gridTemplateColumns: `repeat(auto-fill, minmax(8rem, 12rem))`,
-    gridTemplateRows: `repeat(auto, auto)`,
-    gridAutoFlow: `column`
+export default function CategoriesGrid({cols = 5, rows = 1}) {
+  const limit = cols * rows
+  const gridStyles = {
+    maxWidth: `${(cols * 12) + ((cols-1) * 2)}rem`,
+    gridTemplateColumns: `repeat(auto-fill, 12rem)`
   }
-
+  // store return values from useCategories()
   const { categories, loading, error } = useCategories()
-  // prevent rendering users.map before promise is resolved
-  if (loading) return <p>Caricamento...</p>
-  if (error) return <p>Errore: {error}</p>
-  // only when loading completed without errors: map
-  const visible = limit ? categories.slice(1, limit+1) : categories
+  // if error, return error
+  if (error) return (
+    <div className="flex flex-col items-center gap-5 p-5 bg-primary text-white rounded-2xl shadow-md shadow-dark-overlay">
+      <p><strong>Error: </strong>{error}</p>
+    </div>
+    )
+  // skeleton while loading: prevent rendering categories.map before promise is resolved
   return (
-    <div className="grid gap-8 justify-center-safe" style={gridTemplate}>
-      {visible.map((category) => (
-        <CardCategories key={category.id} categ={category}>
-        </CardCategories>
-      ))}
+    <div className="m-auto grid gap-8 justify-center-safe" style={gridStyles}>
+      {loading
+        ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
+        : categories.slice(0, limit).map((cat) =>
+            <Card key={cat.id} obj={cat} img={cat.image} title={cat.name} description={cat.description} variant="hoverScale" />
+          )
+      }
     </div>
   )
 }

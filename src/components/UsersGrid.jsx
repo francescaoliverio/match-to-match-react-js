@@ -23,7 +23,7 @@ export default function UsersGrid({cols = 3, rows = 2}) {
       {loading
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
         : users.slice(1, limit+1).map((user) =>
-            <Card key={user.id} person={user} variant="hoverScale" />
+            <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />
           )
       }
     </div>

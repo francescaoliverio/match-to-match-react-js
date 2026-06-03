@@ -11,13 +11,13 @@ const VARIANT_STYLES = {
 };
 
 // Card: display picture, name and bio of provided person
-export default function Card({ person, className, variant = "none", ...props }) {
+export default function Card({ obj, img, title, description, className, variant = "none", ...props }) {
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
-      <img src={person.avatar} alt={person.firstName} />
+      <img src={img} alt={title} />
       <div className="p-2.5">
-        <strong className="text-lg">{person.firstName}</strong>
-        <p className="line-clamp-3">{person.bio}</p>
+        <strong className="text-lg">{title}</strong>
+        <p className="line-clamp-3">{description}</p>
       </div>
     </div>
   );

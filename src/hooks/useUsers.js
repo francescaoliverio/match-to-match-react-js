@@ -11,9 +11,10 @@ export function useUsers() {
     const fetchUsers = async () => {
       try {
         const response = await fetch('/api/users')
-        console.log("Response:", response)
+        if (!response.ok) {
+          throw new Error()
+        }
         const data = await response.json()
-        console.log("Data:", data)
         setUsers(data)
       } catch (err) {
         setError(err.message)

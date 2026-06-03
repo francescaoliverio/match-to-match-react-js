@@ -1,30 +1,37 @@
 import MatchSearch from "../components/MatchSearch";
 import UsersGrid from "../components/UsersGrid";
 import CategoriesGrid from "../components/CategoriesGrid";
+import Button from "../components/Button";
+import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined';
+import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined';
 
 export default function Explore() {
   return (
     <>
-      <div>
+      <section>
         <h1>MATCH TO MATCH</h1>
         <MatchSearch />
-      </div>
-      <div>
+      </section>
+      <section>
         <h3>A cosa vorresti giocare?</h3>
         <p>Esplora le categorie</p>
-        <CategoriesGrid />
-      </div>
-      <div>
-        <h2>THE RIGHT MATCH IS WAITING TO MEET YOU!</h2>
-      </div>
-      <div className="p-5 self-stretch">
+        <div className="flex flex-row justify-center items-center w-fit gap-5">
+          <Button className='p-2.5'><ArrowBackIosOutlinedIcon /></Button>
+          <CategoriesGrid />
+          <Button className='p-2.5'><ArrowForwardIosOutlinedIcon /></Button>
+        </div>
+      </section>
+      <section className="p-5">
         <h3>Ready to Match?</h3>
         <p>Proposte di match per te</p>
-        <UsersGrid cols={4} rows={2}/>
-      </div>
-      <div>
+        <UsersGrid cols={4} rows={2} />
+      </section>
+      <section>
         <h3>Explore the map</h3>
-      </div>
+        <figure className="sm:w-full lg:w-[50%]">
+          <img src='/images/map/map.png' alt="explore the map" />
+        </figure>
+      </section>
     </>
   );
 }

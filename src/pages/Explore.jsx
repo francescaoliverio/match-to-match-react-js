@@ -7,7 +7,7 @@ export default function Explore() {
       <h1>Explore</h1>
       <MatchSearch />
       <div className="p-5 self-stretch">
-        <UsersGrid limit={4}/>
+        <UsersGrid cols={4} rows={2}/>
       </div>
     </>
   );

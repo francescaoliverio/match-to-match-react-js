@@ -2,7 +2,7 @@
 
 import { useNavigate, Link } from "react-router-dom";
 import { useRef, useState } from "react";
-import { useAuth } from "../context/AuthContext"; // Importiamo il gestore del login
+import { useAuth } from "../context/AuthContext";
 import Button from "./Button";
 
 // icons for password visibility
@@ -44,11 +44,9 @@ export default function LoginForm() {
       if (usersFound.length === 0 || usersFound[0].password !== password) {
         throw new Error("Email o password errati. Riprova.");
       }
-      // if all good, save logged in user
+      // if all good, save logged in user and go to profile
       const loggedInUser = usersFound[0];
       login(loggedInUser);
-      // print loggedInUser to console
-      console.log("User logged in:", loggedInUser);
       navigate("/profile");
     } catch (error) {
       setLoginError(error.message);

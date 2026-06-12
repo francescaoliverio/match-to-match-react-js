@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import { cn } from "../lib/utils";
 
-const BASE_STYLES = "flex items-center justify-center px-5 py-2.5 rounded-full w-fit shadow-md shadow-dark-overlay disabled:cursor-default";
+const BASE_STYLES = "flex items-center justify-center px-5 py-2.5 rounded-full w-full shadow-md shadow-dark-overlay disabled:cursor-default";
 
 const VARIANT_STYLES = {
   transparent: "text-ink bg-transparent-white",

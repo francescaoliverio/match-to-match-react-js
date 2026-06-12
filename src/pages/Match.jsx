@@ -4,9 +4,9 @@ export default function Match() {
 
   return (
     <>
-      <h1>Match</h1>
+      <h1>Ready to Match?</h1>
       <div className="p-5 self-stretch">
-        <UsersGrid cols={3} rows={2}/>
+        <UsersGrid cols={3} rows={2} pending={true}/>
       </div>
     </>
   );

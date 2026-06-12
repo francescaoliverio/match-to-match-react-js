@@ -1,9 +1,10 @@
 // src/components/UsersGrid.jsx
 
 import { useUsers } from "../hooks/useUsers"
+import { useHandleMatch } from "../hooks/useHandleMatch"
 import Card, {CardSkeleton} from "./Card"
 
-export default function UsersGrid({cols = 3, rows = 2}) {
+export default function UsersGrid({cols = 3, rows = 2, pending=false}) {
   const limit = cols * rows
   const gridStyles = {
     maxWidth: `${(cols * 12) + ((cols-1) * 2)}rem`,
@@ -11,6 +12,7 @@ export default function UsersGrid({cols = 3, rows = 2}) {
   }
   // store return values from useUsers()
   const { users, loading, error } = useUsers()
+  const { confirmMatch, cancelMatch } = useHandleMatch()
   // if error, return error
   if (error) return (
     <div className="flex flex-col items-center gap-5 p-5 bg-primary text-white rounded-2xl shadow-md shadow-dark-overlay">
@@ -23,7 +25,10 @@ export default function UsersGrid({cols = 3, rows = 2}) {
       {loading
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
         : users.slice(1, limit+1).map((user) =>
-            <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />
+            <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} buttons={pending} variant="hoverScale"
+            onAccept={() => confirmMatch({user2Id: user.id})}
+            onReject={() => cancelMatch(user.id)}
+        />
           )
       }
     </div>

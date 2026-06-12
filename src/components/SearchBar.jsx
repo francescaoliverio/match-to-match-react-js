@@ -18,7 +18,7 @@ export default function SearchBar({placeholder, variant="transparent", className
 
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
-      <input id={id} type="text" value={input} onChange={handleChangeInput} placeholder={placeholder} className="outline-none" />
+      <input id={id} type="text" value={input} onChange={handleChangeInput} placeholder={placeholder} className="outline-none w-full" />
       {children}
     </div>
   );

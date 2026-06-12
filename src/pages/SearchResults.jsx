@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useCategories } from "../hooks/useCategories";
 import { useUsers } from "../hooks/useUsers";
 
-import UsersGrid from "../components/UsersGrid";
+import Card from "../components/Card";
 
 export default function SearchResults() {
   const location = useLocation();
@@ -26,9 +26,34 @@ export default function SearchResults() {
     (cat) => cat.name.trim().toLowerCase() === term.trim().toLowerCase(),
   );
 
+  if (!matchedCategory) {
+    return <p>Categoria inesistente</p>;
+  }
+
   const filtered = users.filter((user) =>
     user.activities.includes(matchedCategory.id),
   );
 
-  return <div></div>;
+  return (
+    <>
+      <h1>Categoria: {matchedCategory.name}</h1>
+      <div
+        className="m-auto grid gap-8 justify-center-safe"
+        style={{
+          gridTemplateColumns: `repeat(5, 12rem)`,
+        }}
+      >
+        {filtered.map((user) => (
+          <Card
+            key={user.id}
+            obj={user}
+            img={user.avatar}
+            title={user.firstName}
+            description={user.bio}
+            variant="hoverScale"
+          />
+        ))}
+      </div>
+    </>
+  );
 }

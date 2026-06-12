@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 export default function Chat() {
   return (
     <>
-      <h1>Chat</h1>
-      <div className="grow flex flex-col md:flex-row items-stretch justify-center gap-5 w-full p-5">
+      <div className="flex flex-col md:flex-row items-stretch justify-center gap-5 p-5 w-full lg:w-250 h-full">
         <ChatList />
         <OpenChat />
       </div>

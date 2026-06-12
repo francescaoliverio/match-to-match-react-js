@@ -24,7 +24,7 @@ export default function UsersGrid({cols = 3, rows = 2, pending=false}) {
     <div className="m-auto grid gap-8 justify-center-safe" style={gridStyles}>
       {loading
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
-        : users.slice(1, limit+1).map((user) =>
+        : users?.slice(1, limit+1).map((user) =>
             <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} buttons={pending} variant="hoverScale"
             onAccept={() => confirmMatch({user2Id: user.id})}
             onReject={() => cancelMatch(user.id)}

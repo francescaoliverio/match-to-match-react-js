@@ -7,6 +7,7 @@ import Match from "./pages/Match";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
+import SearchResults from "./pages/SearchResults";
 
 export default function App() {
   return (
@@ -28,6 +29,8 @@ const router = createBrowserRouter([
       { path: "chat", element: <Chat /> },
       { path: "profile", element: <Profile />},
       { path: "profile/login", element: <Login />},
+      { path: "results", element: <SearchResults />},
+      // { path: "*", element: <NotFound />},
     ],
   },
 ]);

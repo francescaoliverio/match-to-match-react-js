@@ -39,13 +39,13 @@ export default function MatchSearch() {
       </div>
       <div onClick={() => handleClick("where")}>
         {active === "where" ? (
-          <SearchBar id="where" ref={searchRef} placeholder="where..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+          <SearchBar id="where" placeholder="where..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
             <label htmlFor="where" className="text-tertiary hover:cursor-pointer">
               <PlaceOutlinedIcon color="inherit" />
             </label>
           </SearchBar>
         ) : (
-          <label htmlFor="where" ref={searchRef} className="text-transparent-white hover:text-white hover:cursor-pointer">
+          <label htmlFor="where" className="text-transparent-white hover:text-white hover:cursor-pointer">
             <PlaceOutlinedIcon color="inherit" />
           </label>
         )}

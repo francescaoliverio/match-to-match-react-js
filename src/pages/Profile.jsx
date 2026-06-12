@@ -28,6 +28,19 @@ export default function Profile() {
         </div>
         <p>{user.bio}</p>
       </div>
+      <div className="w-xs flex flex-col items-stretch gap-2.5 p-5 bg-tertiary text-light rounded-2xl shadow-md shadow-dark-overlay">
+        <h5 className="ps-5">Impostazioni</h5>
+        <ul>
+          <li><a href="">Seleziona i tuoi interessi</a></li>
+          <li><a href="">Cambia l'area geografica</a></li>
+        </ul>
+        <h5 className="ps-5">Assistenza</h5>
+        <ul>
+          <li><a href="">Contattaci</a></li>
+          <li><a href="">Segnala un utente</a></li>
+          <li><a href="">Chiudi il tuo account</a></li>
+        </ul>
+      </div>
     </div>
   );
 }

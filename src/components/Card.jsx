@@ -14,7 +14,7 @@ const VARIANT_STYLES = {
 };
 
 // Card: display picture, name and bio of provided person
-export default function Card({ obj, img, title, description, buttons = false, className, variant = "none", ...props }) {
+export default function Card({ obj, img, title, description, buttons = false, onAccept, onReject, className, variant = "none", ...props }) {
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
       <img src={img} alt={title} />
@@ -24,10 +24,10 @@ export default function Card({ obj, img, title, description, buttons = false, cl
       </div>
       {buttons && (
         <div className="flex flex-row justify-between m-2.5">
-          <Button variant="primary" className="p-2.5">
+          <Button variant="primary" className="p-2.5" onClick={onAccept}>
             <CheckOutlinedIcon />
           </Button>
-          <Button variant="secondary" className="p-2.5">
+          <Button variant="secondary" className="p-2.5" onClick={onReject}>
             <CloseOutlinedIcon />
           </Button>
         </div>

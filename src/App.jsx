@@ -1,13 +1,38 @@
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import { AuthProvider } from './context/AuthContext.jsx'
+// src\App.jsx
 
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { AuthProvider } from "./context/AuthContext.jsx";
+
+import PrivateRoutes from "./components/PrivateRoutes.jsx";
 import BasicLayout from "./layout/BasicLayout";
+import NotFound from "./pages/NotFound";
 import Explore from "./pages/Explore";
 import Match from "./pages/Match";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import NotFound from "./pages/NotFound";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <BasicLayout />,
+    children: [
+      // 🛑 404: not found
+      { path: "*", element: <NotFound /> },
+      // 🔓 public routes
+      { index: true, element: <Explore /> },
+      { path: "profile/login", element: <Login /> },
+      // 🔒 private routes
+      { element: <PrivateRoutes />,
+        children: [
+          { path: "match", element: <Match /> },
+          { path: "chat", element: <Chat /> },
+          { path: "profile", element: <Profile /> },
+        ],
+      },
+    ],
+  },
+]);
 
 export default function App() {
   return (
@@ -18,18 +43,3 @@ export default function App() {
     </AuthProvider>
   );
 }
-
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <BasicLayout />,
-    children: [
-      { path: "*", element: <NotFound /> },
-      { index: true, element: <Explore /> },
-      { path: "match", element: <Match /> },
-      { path: "chat", element: <Chat /> },
-      { path: "profile", element: <Profile />},
-      { path: "profile/login", element: <Login />},
-    ],
-  },
-]);

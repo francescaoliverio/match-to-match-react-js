@@ -57,8 +57,8 @@ export default function LoginForm() {
   return (
     <div className="w-xs flex flex-col items-stretch gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
       {/* Logo */}
-      <div className="w-20 h-20 rounded-full self-center flex justify-center items-center bg-tertiary">
-        <img src="/logo/logo-bg-transparent.svg" alt="Match to Match logo" className="w-12 h-12" />
+      <div className="size-20 rounded-full self-center flex justify-center items-center bg-tertiary">
+        <img src="/logo/logo-bg-transparent.svg" alt="Match to Match logo" className="size-12" />
       </div>
       {/* Form */}
       <form onSubmit={submitForm} className="flex flex-col items-center gap-5">

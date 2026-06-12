@@ -1,5 +1,8 @@
-import { Outlet, useLocation } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import BottomNavBar from "../components/BottomNavBar";
+import TopNavBar from "../components/TopNavBar";
+import Button from "../components/Button";
 
 const backgrounds = {
   "/": "url('/images/background/friends.jpg')",
@@ -10,11 +13,16 @@ const backgrounds = {
 const bgPaths = ["/match", "/chat", "/profile"]
 
 export default function BasicLayout() {
-  const { pathname } = useLocation()
-  const bgKey = bgPaths.find(key => pathname.startsWith(key)) ?? "/"
+  // Authentication hooks
+  const { logout } = useAuth();
+  const { user } = useAuth();
+  // Page background depending on location
+  const { pathname } = useLocation();
+  const bgKey = bgPaths.find((key) => pathname.startsWith(key)) ?? "/";
 
   return (
     <div className="h-screen flex flex-col bg-cover bg-top" style={{ backgroundImage: backgrounds[bgKey] }}>
+      <TopNavBar />
       <main className="flex flex-col grow items-center justify-start overflow-auto bg-light-overlay backdrop-saturate-120 backdrop-blur-[2px]">
         <Outlet />
       </main>

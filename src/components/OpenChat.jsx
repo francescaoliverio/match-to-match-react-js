@@ -1,22 +1,26 @@
 // src/components/OpenChat.jsx
 
-import Button from "./Button";
-import SearchBar from "./SearchBar";
-import { Send } from "@mui/icons-material";
-import { cn } from "../lib/utils";
+import Button from "./Button"
+import SearchBar from "./SearchBar"
+import { Send } from "@mui/icons-material"
+import ArrowBackIosNewIcon from "@mui/icons-material/ArrowBackIosNew"
+import { cn } from "../lib/utils"
 
-const MSG_BASE_STYLES = "py-2.5 px-5 rounded-4xl max-w-[80%]";
+const MSG_BASE_STYLES = "py-2.5 px-5 rounded-4xl max-w-[80%]"
 
 const MSG_VARIANT_STYLES = {
   fromYou: "bg-tertiary text-light rounded-br-sm self-end",
   toYou: "bg-light text-ink rounded-tl-sm self-start",
-};
+}
 
-export default function OpenChat() {
+export default function OpenChat({ onBack, className }) {
   return (
-    <div className="bg-transparent-white w-full md:w-[50%] shrink-0 h-[70%] md:h-full rounded-4xl flex flex-col justify-stretch items-stretch overflow-hidden">
+    <div className={cn("bg-transparent-white h-full rounded-4xl flex flex-col justify-stretch items-stretch overflow-hidden", className)}>
       {/* Header */}
       <div className="p-2.5 bg-secondary flex justify-start items-center gap-5">
+        <Button variant="transparent" className="p-1.5 md:hidden text-ink" onClick={onBack}>
+          <ArrowBackIosNewIcon />
+        </Button>
         <img className="size-12 rounded-full" src="images/profile-pictures/pino-daniele.webp" />
         <h4>Pino Daniele</h4>
       </div>
@@ -46,5 +50,5 @@ export default function OpenChat() {
         </Button>
       </div>
     </div>
-  );
+  )
 }

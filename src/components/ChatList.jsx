@@ -7,17 +7,18 @@ import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
 import { useChatList } from "../hooks/useChatlist"
 import { useUsers } from "../hooks/useUsers"
 import { useState, useEffect } from "react"
+import { cn } from "../lib/utils"
 
-export default function ChatList() {
+export default function ChatList({ onSelectChat, className }) {
   const { chatList, loading: chatListLoading, error: chatListError } = useChatList()
   const { users, loading: usersLoading, error: usersError } = useUsers()
 
   if (chatListError || usersError) return (
     <ErrorBox><strong>Errore: </strong>{chatListError || usersError}</ErrorBox>
-  )
+    )
 
   return (
-    <div className="px-2.5 w-full md:w-[50%] md:h-full overflow-y-auto relative">
+    <div className={cn("px-2.5 h-full overflow-y-auto relative", className)}>
       {/* Searchbar (to search chats) */}
       <SearchBar placeholder="search" className="sticky top-0 z-1 backdrop-blur-xs">
         <Button variant="transparent" className="p-1.5">
@@ -30,7 +31,7 @@ export default function ChatList() {
           {chatList.map((chat) => {
             const user = users?.find((u) => u.id === chat.partnerId)
             return (
-              <div key={chat.id} className="relative flex flex-row items-center gap-5 p-5 bg-white rounded-2xl shadow-md shadow-dark-overlay hover:cursor-pointer">
+              <div key={chat.id} onClick={() => onSelectChat(chat.id)} className="relative flex flex-row items-center gap-5 p-5 bg-white rounded-2xl shadow-md shadow-dark-overlay hover:cursor-pointer">
                 {/* Unread messages */}
                 {chat.unreadCount > 0 && <div className="flex items-center justify-center font-bold absolute -top-1 -right-1 size-8 bg-secondary rounded-full">{chat.unreadCount}</div>}
                 {/* Profile picture */}

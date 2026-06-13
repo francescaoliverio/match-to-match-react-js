@@ -54,7 +54,7 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="w-xs flex flex-col items-stretch gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
+    <div className="max-w-sm flex flex-col items-stretch gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
       {/* Logo */}
       <div className="size-20 rounded-full self-center flex justify-center items-center bg-tertiary">
         <img src="/logo/logo-bg-transparent.svg" alt="Match to Match logo" className="size-12" />
@@ -74,7 +74,7 @@ export default function LoginForm() {
           </button>
         </div>
         {/* Error box if login goes wrong */}
-        {loginError && <ErrorBox>{loginError}</ErrorBox>}
+        {loginError && <ErrorBox className="m-0 w-full">{loginError}</ErrorBox>}
         <Link to="">password dimenticata?</Link>
         <Button label="Accedi" variant="primary" type="submit" />
       </form>

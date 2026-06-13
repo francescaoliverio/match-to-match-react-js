@@ -1,19 +1,19 @@
 // src/components/ChatList.jsx
 
-import Button from "../components/Button"
-import SearchBar from "../components/SearchBar"
+import Button from "./Button"
+import ErrorBox from "./ErrorBox"
+import SearchBar from "./SearchBar"
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
 import { useChatList } from "../hooks/useChatlist"
 import { useUsers } from "../hooks/useUsers"
 import { useState, useEffect } from "react"
-import ErrorBox from "./ErrorBox"
 
 export default function ChatList() {
   const { chatList, loading: chatListLoading, error: chatListError } = useChatList()
   const { users, loading: usersLoading, error: usersError } = useUsers()
 
   if (chatListError || usersError) return (
-    <ErrorBox><p><strong>Errore: </strong>{chatListError || usersError}</p></ErrorBox>
+    <ErrorBox><strong>Errore: </strong>{chatListError || usersError}</ErrorBox>
   )
 
   return (

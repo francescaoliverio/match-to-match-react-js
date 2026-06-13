@@ -33,13 +33,13 @@ export default function SearchResults() {
   const filtered = users?.filter((user) => user.activities.includes(matchedCategory.id));
 
   return (
-    <>
-      <h1>Categoria: {matchedCategory.name}</h1>
-      <div className="m-auto grid gap-8 justify-center-safe" style={{ gridTemplateColumns: `repeat(5, 12rem)` }}>
-        {filtered?.map((user) => (
-          <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />
-        ))}
+    <section className={SECTION_STYLES}>
+      {/* Title: show category name after fetch found matchedCategory */}
+      <h1 className="text-center">{catLoading ? "Caricamento..." : `Categoria: ${matchedCategory?.name}`}</h1>
+      {/* Cards: show skeletons until users are fetched and filtered */}
+      <div className={GRID_STYLES} style={{ gridTemplateColumns: `repeat(auto-fit, 12rem)` }}>
+        {userLoading || catLoading ? Array.from({ length: 5 }).map((_, i) => <CardSkeleton key={i} />) : filtered?.map((user) => <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />)}
       </div>
-    </>
-  );
+    </section>
+  )
 }

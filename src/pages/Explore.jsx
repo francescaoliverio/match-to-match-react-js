@@ -21,11 +21,13 @@ export default function Explore() {
       <section className={SECTION_STYLES}>
         <h3 className="text-center">Scegli la prossima sfida</h3>
         <p>Esplora le categorie</p>
-        <div className="flex flex-row justify-center items-center w-fit gap-5">
+        <div className="w-full flex flex-row justify-center items-center gap-5">
           <Button className="p-2.5">
             <ArrowBackIosOutlinedIcon />
           </Button>
-          <CategoriesGrid />
+          <div className="p-2.5 overflow-x-visible overflow-y-auto">
+            <CategoriesGrid className="w-fit"/>
+          </div>
           <Button className="p-2.5">
             <ArrowForwardIosOutlinedIcon />
           </Button>
@@ -41,7 +43,7 @@ export default function Explore() {
       <section className={SECTION_STYLES}>
         <h3 className="text-center">Esplora la mappa</h3>
         <figure className="w-full">
-          <img src="/images/map/map.png" alt="explore the map" />
+          <img src="/images/map/map.png" alt="Esplora la mappa" />
         </figure>
       </section>
     </>

@@ -30,8 +30,8 @@
   /* Text */
   --color-ink: #222222;
   /* Transparent */
-  --color-dark-overlay: #0000001a;
-  --color-light-overlay: #ffffff1a;
+  --color-dark-overlay: #0000002e;
+  --color-light-overlay: #ffffff2e;
   --color-transparent-nav: #ffffffe6;
   --color-transparent-white: #ffffffb2;
   --color-transparent-tertiary: #553377b2;
@@ -55,6 +55,9 @@
   h6 {
     font-weight: 900;
     font-family: var(--font-heading);
+  }
+  h4, h5, h6 {
+    font-weight: 700;
   }
   h1 {
     font-size: 4rem;

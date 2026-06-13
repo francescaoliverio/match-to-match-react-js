@@ -18,9 +18,9 @@ export default function BasicLayout() {
   const bgKey = bgPaths.find((key) => pathname.startsWith(key)) ?? "/";
 
   return (
-    <div className="h-screen flex flex-col bg-cover bg-top" style={{ backgroundImage: backgrounds[bgKey] }}>
+    <div className="w-screen h-screen flex flex-col bg-cover bg-top" style={{ backgroundImage: backgrounds[bgKey] }}>
       <TopNavBar />
-      <main className="flex flex-col grow items-center justify-start overflow-auto bg-light-overlay backdrop-saturate-120 backdrop-blur-[2px]">
+      <main className="w-full flex flex-col grow items-center justify-start overflow-auto bg-light-overlay backdrop-saturate-120 backdrop-brightness-110 backdrop-blur-[2px]">
         <Outlet />
       </main>
       <BottomNavBar />

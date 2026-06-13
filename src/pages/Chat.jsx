@@ -1,14 +1,17 @@
+// src/pages/Chat.jsx
+
 import ChatList from "../components/ChatList";
 import OpenChat from "../components/OpenChat";
 import { useState, useEffect } from "react";
 
+import { cn } from "../lib/utils";
+import { SECTION_STYLES } from "../styles/styles";
+
 export default function Chat() {
   return (
-    <>
-      <div className="flex flex-col md:flex-row items-stretch justify-center gap-5 p-5 w-full lg:w-250 h-full">
-        <ChatList />
-        <OpenChat />
-      </div>
-    </>
+    <section className={cn(SECTION_STYLES, "md:flex-row items-stretch justify-center gap-5 h-full")}>
+      <ChatList />
+      <OpenChat />
+    </section>
   );
 }

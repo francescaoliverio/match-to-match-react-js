@@ -1,15 +1,17 @@
+// src/pages/Profile.jsx
+
 import { useAuth } from "../context/AuthContext";
 
-// 📍 location
+import { SECTION_STYLES } from "../styles/styles";
+
 import PlaceOutlinedIcon from "@mui/icons-material/PlaceOutlined";
-// 📆 calendar
 import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
 
 export default function Profile() {
   const { user } = useAuth();
 
   return (
-    <div className="p-5 gap-2.5 flex flex-col items-center justify-start">
+    <section className={SECTION_STYLES}>
       <div className="w-xs flex flex-col items-center gap-2.5 p-5 bg-white text-ink rounded-2xl shadow-md shadow-dark-overlay">
         {/* Profile Picture */}
         <div className="size-20 rounded-full overflow-hidden flex justify-center items-center bg-tertiary">
@@ -18,29 +20,24 @@ export default function Profile() {
         {/* User Name */}
         <h3>{user.firstName}</h3>
         <div className="flex flex-row justify-evenly w-full">
-          <p>
-            <PlaceOutlinedIcon />
-            {user.city}
-          </p>
-          <p>
-            <CalendarTodayOutlinedIcon /> {user.age} anni
-          </p>
+          <p><PlaceOutlinedIcon /> {user.city}</p>
+          <p><CalendarTodayOutlinedIcon /> {user.age} anni</p>
         </div>
         <p>{user.bio}</p>
       </div>
       <div className="w-xs flex flex-col items-stretch gap-2.5 p-5 bg-tertiary text-light rounded-2xl shadow-md shadow-dark-overlay">
-        <h5 className="ps-5">Impostazioni</h5>
+        <h4 className="ps-5">Impostazioni</h4>
         <ul>
-          <li><a href="">Seleziona i tuoi interessi</a></li>
-          <li><a href="">Cambia l'area geografica</a></li>
+          <li>Seleziona i tuoi interessi</li>
+          <li>Cambia l'area geografica</li>
         </ul>
-        <h5 className="ps-5">Assistenza</h5>
+        <h4 className="ps-5">Assistenza</h4>
         <ul>
-          <li><a href="">Contattaci</a></li>
-          <li><a href="">Segnala un utente</a></li>
-          <li><a href="">Chiudi il tuo account</a></li>
+          <li>Contattaci</li>
+          <li>Segnala un utente</li>
+          <li>Chiudi il tuo account</li>
         </ul>
       </div>
-    </div>
+    </section>
   );
 }

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import { Link, useNavigate } from 'react-router-dom'
 
 import SearchBar from "./SearchBar";
 import Button from '../components/Button'
@@ -14,11 +15,18 @@ export default function MatchSearch() {
     setActive(target)
   }
 
+  const navigate = useNavigate()
+  const searchRef = useRef('')
+  function handleSearch(){
+    const term = searchRef.current.value?.trim().toLowerCase()
+    navigate(`/results?q=${term}`)
+  }
+
   return (
     <div className="bg-transparent-tertiary flex items-center justify-center p-3.5 gap-5 rounded-full w-fit">
       <div onClick={() => handleClick("what")}>
         {active === "what" ? (
-          <SearchBar id="what" placeholder="what..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
+          <SearchBar id="what" ref={searchRef} placeholder="what..." variant="white" className="flex-2 flex-row-reverse p-2.5 gap-2.5">
             <label htmlFor="what" className="text-tertiary hover:cursor-pointer">
               <CategoryOutlinedIcon color="inherit" />
             </label>
@@ -55,7 +63,7 @@ export default function MatchSearch() {
           </label>
         )}
       </div>
-      <Button label="search" variant="primary">
+      <Button onClick={handleSearch} label="search" variant="primary">
         <SearchOutlinedIcon />
       </Button>
     </div>

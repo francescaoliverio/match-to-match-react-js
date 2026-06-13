@@ -11,6 +11,7 @@ import Match from "./pages/Match";
 import Chat from "./pages/Chat";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
+import SearchResults from "./pages/SearchResults";
 
 const router = createBrowserRouter([
   {
@@ -22,6 +23,7 @@ const router = createBrowserRouter([
       // 🔓 public routes
       { index: true, element: <Explore /> },
       { path: "profile/login", element: <Login /> },
+      { path: "results", element: <SearchResults /> },
       // 🔒 private routes
       { element: <PrivateRoutes />,
         children: [

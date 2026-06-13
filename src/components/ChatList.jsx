@@ -1,15 +1,20 @@
 // src/components/ChatList.jsx
 
-import Button from "../components/Button";
-import SearchBar from "../components/SearchBar";
-import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
-import { useChatList } from "../hooks/useChatlist";
-import { useUsers } from "../hooks/useUsers";
-import { useState, useEffect } from "react";
+import Button from "../components/Button"
+import SearchBar from "../components/SearchBar"
+import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined"
+import { useChatList } from "../hooks/useChatlist"
+import { useUsers } from "../hooks/useUsers"
+import { useState, useEffect } from "react"
+import ErrorBox from "./ErrorBox"
 
 export default function ChatList() {
-  const { chatList, loading: chatListLoading, error: chatListError } = useChatList();
-  const { users, loading: usersLoading, error: usersError } = useUsers();
+  const { chatList, loading: chatListLoading, error: chatListError } = useChatList()
+  const { users, loading: usersLoading, error: usersError } = useUsers()
+
+  if (chatListError || usersError) return (
+    <ErrorBox><p><strong>Errore: </strong>{chatListError || usersError}</p></ErrorBox>
+  )
 
   return (
     <div className="px-2.5 w-full md:w-[50%] md:h-full overflow-y-auto relative">
@@ -23,7 +28,7 @@ export default function ChatList() {
       {chatList && users ? (
         <div className="flex flex-col gap-5 py-5">
           {chatList.map((chat) => {
-            const user = users?.find((u) => u.id === chat.partnerId);
+            const user = users?.find((u) => u.id === chat.partnerId)
             return (
               <div key={chat.id} className="relative flex flex-row items-center gap-5 p-5 bg-white rounded-2xl shadow-md shadow-dark-overlay hover:cursor-pointer">
                 {/* Unread messages */}
@@ -39,7 +44,7 @@ export default function ChatList() {
                   <p className="line-clamp-1 text-clip">{chat.lastMessage}</p>
                 </div>
               </div>
-            );
+            )
           })}
         </div>
       ) : (
@@ -49,5 +54,5 @@ export default function ChatList() {
         </div>
       )}
     </div>
-  );
+  )
 }

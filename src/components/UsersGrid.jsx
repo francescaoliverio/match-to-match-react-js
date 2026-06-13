@@ -2,9 +2,10 @@
 
 import { useUsers } from "../hooks/useUsers"
 import { useHandleMatch } from "../hooks/useHandleMatch"
-import Card, {CardSkeleton} from "./Card"
+import Card, { CardSkeleton } from "./Card"
+import ErrorBox from "./ErrorBox"
 
-export default function UsersGrid({cols = 3, rows = 2, pending=false}) {
+export default function UsersGrid({ cols = 3, rows = 2, pending = false }) {
   const limit = cols * rows
   const gridStyles = {
     maxWidth: `${(cols * 12) + ((cols-1) * 2)}rem`,
@@ -15,10 +16,8 @@ export default function UsersGrid({cols = 3, rows = 2, pending=false}) {
   const { confirmMatch, cancelMatch } = useHandleMatch()
   // if error, return error
   if (error) return (
-    <div className="flex flex-col items-center gap-5 p-5 bg-primary text-white rounded-2xl shadow-md shadow-dark-overlay">
-      <p><strong>Error: </strong>{error}</p>
-    </div>
-    )
+    <ErrorBox><p><strong>Errore: </strong>{error}</p></ErrorBox>
+  )
   // skeleton while loading: prevent rendering users.map before promise is resolved
   return (
     <div className="m-auto grid gap-8 justify-center-safe" style={gridStyles}>

@@ -1,14 +1,13 @@
 // src/pages/NotFound.jsx
 
-import { ERROR_BOX_STYLES } from "../styles/styles";
+import ErrorBox from "../components/ErrorBox";
 
 export default function NotFound() {
 
   return (
-    <div className={ERROR_BOX_STYLES}>
-      <h2>Error: 404</h2>
-      <h1>Oh no!</h1>
+    <ErrorBox>
+      <h2 className="-mt-2.5">Error: 404</h2>
       <p>Siamo spiacenti, ma questa pagina non esiste.</p>
-    </div>
+    </ErrorBox>
   );
 }

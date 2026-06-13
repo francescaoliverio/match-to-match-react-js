@@ -10,13 +10,15 @@ export function useCategories() {
   useEffect(() => {
     const fetchCategories = async () => {
       try {
-        const response = await fetch('/api/categories')
-        console.log("Response:", response)
+        const response = await fetch("/api/categories")
+        if (!response.ok) {
+          throw new Error("Impossibile caricare le categorie")
+        }
         const data = await response.json()
-        console.log("Data:", data)
         setCategories(data)
       } catch (err) {
-        setError(err.message)
+        setError(err.message || "Connessione al server fallita")
+        console.error(err)
       } finally {
         setLoading(false)
       }

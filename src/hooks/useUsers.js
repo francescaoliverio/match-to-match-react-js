@@ -10,14 +10,15 @@ export function useUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch('/api/users')
+        const response = await fetch("/api/users")
         if (!response.ok) {
-          throw new Error()
+          throw new Error("Impossibile caricare gli utenti")
         }
         const data = await response.json()
         setUsers(data)
       } catch (err) {
-        setError(err.message)
+        setError(err.message || "Connessione al server fallita")
+        console.error(err)
       } finally {
         setLoading(false)
       }

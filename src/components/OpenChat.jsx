@@ -25,8 +25,9 @@ export default function OpenChat({ onBack, className }) {
         <h4>Pino Daniele</h4>
       </div>
       {/* Messages */}
-      <div className="flex-1 flex flex-col-reverse justify-start items-stretch gap-2.5 p-5 overflow-y-scroll scroll-smooth">
+      <div className="flex-1 flex flex-col-reverse justify-start items-stretch gap-2.5 p-2.5 overflow-y-scroll scroll-smooth">
         {/* --- OGGI --- */}
+        <div className={cn(MSG_BASE_STYLES, MSG_VARIANT_STYLES["toYou"])}>Confermato per domenica, partenza dalla piazza!</div>
         <div className={cn(MSG_BASE_STYLES, MSG_VARIANT_STYLES["fromYou"])}>Dovrebbe far bel tempo ☀️</div>
         <div className={cn(MSG_BASE_STYLES, MSG_VARIANT_STYLES["fromYou"])}>Che ne dici di domenica?</div>
         <div className={cn(MSG_BASE_STYLES, MSG_VARIANT_STYLES["fromYou"])}>Volentieri</div>

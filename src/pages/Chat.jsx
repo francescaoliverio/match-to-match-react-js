@@ -12,7 +12,7 @@ export default function Chat() {
 
   return (
     <section className={cn(SECTION_STYLES, "md:flex-row items-stretch justify-center gap-5 h-full")}>
-      <ChatList onSelectChat={setActiveChat} className={activeChat ? "hidden md:block" : "block"} />
+      <ChatList onSelectChat={setActiveChat} activeChatId={activeChat} className={activeChat ? "hidden md:block" : "block"} />
       <OpenChat onBack={() => setActiveChat(null)} className={activeChat ? "flex" : "hidden md:flex"} />
     </section>
   )

@@ -9,7 +9,7 @@ import { useUsers } from "../hooks/useUsers"
 import { useState, useEffect } from "react"
 import { cn } from "../lib/utils"
 
-export default function ChatList({ onSelectChat, className }) {
+export default function ChatList({ onSelectChat, activeChatId, className }) {
   const { chatList, loading: chatListLoading, error: chatListError } = useChatList()
   const { users, loading: usersLoading, error: usersError } = useUsers()
 
@@ -30,8 +30,9 @@ export default function ChatList({ onSelectChat, className }) {
         <div className="flex flex-col gap-5 py-5">
           {chatList.map((chat) => {
             const user = users?.find((u) => u.id === chat.partnerId)
+            const isActive = chat.id === activeChatId
             return (
-              <div key={chat.id} onClick={() => onSelectChat(chat.id)} className="relative flex flex-row items-center gap-5 p-5 bg-white rounded-2xl shadow-md shadow-dark-overlay hover:cursor-pointer">
+              <div key={chat.id} onClick={() => onSelectChat(chat.id)} className={cn("relative flex flex-row items-center gap-5 p-5 rounded-2xl shadow-md shadow-dark-overlay hover:cursor-pointer", isActive ? "bg-grey-lighter" : "bg-white")}>
                 {/* Unread messages */}
                 {chat.unreadCount > 0 && <div className="flex items-center justify-center font-bold absolute -top-1 -right-1 size-8 bg-secondary rounded-full">{chat.unreadCount}</div>}
                 {/* Profile picture */}

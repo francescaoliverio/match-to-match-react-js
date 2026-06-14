@@ -8,7 +8,7 @@ export default function Match() {
 
   return (
     <>
-      <h1 className="text-center uppercase">Ready to Match?</h1>
+      <h1 className="text-center uppercase text-shadow-lg/50 text-shadow-ink text-secondary">Ready to Match?</h1>
       <section className={SECTION_STYLES}>
         <UsersGrid cols={3} rows={2} pending={true}/>
       </section>

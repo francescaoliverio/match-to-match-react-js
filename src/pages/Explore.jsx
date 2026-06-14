@@ -27,13 +27,13 @@ export default function Explore() {
     <>
       {/* Hero */}
       <section className={SECTION_STYLES}>
-        <h1 className="uppercase text-center">Match To Match</h1>
+        <h1 className="text-center uppercase text-shadow-lg/50 text-shadow-ink text-primary">Match To Match</h1>
+        <h3 className="-mt-5 text-center text-shadow-lg/20 text-shadow-light">La prossima sfida ti aspetta!</h3>
         <MatchSearch />
       </section>
       {/* Categories */}
       <section className={SECTION_STYLES}>
-        <h3 className="text-center">Scegli la prossima sfida</h3>
-        <p>Esplora le categorie</p>
+        <h2 className="text-center text-shadow-lg/20 text-shadow-light">Esplora le categorie</h2>
         <div className="w-full flex flex-row justify-center items-center gap-5">
           <Button onClick={() => scroll("left")} className="p-2.5">
             <ArrowBackIosOutlinedIcon />
@@ -48,13 +48,12 @@ export default function Explore() {
       </section>
       {/* Users */}
       <section className={SECTION_STYLES}>
-        <h3 className="text-center">Ready to Match?</h3>
-        <p>Proposte di match per te</p>
+        <h2 className="text-center text-shadow-lg/20 text-shadow-light">Ready to Match?</h2>
         <UsersGrid cols={4} rows={2} />
       </section>
       {/* Map */}
       <section className={SECTION_STYLES}>
-        <h3 className="text-center">Esplora la mappa</h3>
+        <h2 className="text-center text-shadow-lg/20 text-shadow-light">Esplora la mappa</h2>
         <figure className="w-full">
           <img src="/images/map/map.png" alt="Esplora la mappa" />
         </figure>

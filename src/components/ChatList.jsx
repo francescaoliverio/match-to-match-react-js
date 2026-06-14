@@ -41,7 +41,7 @@ export default function ChatList({ onSelectChat, activeChatId, className }) {
                 </div>
                 <div>
                   {/* User name */}
-                  <h4>{user ? `${user.firstName}` : "Utente Sconosciuto"}</h4>
+                  <strong className="text-lg">{user ? `${user.firstName}` : "Utente Sconosciuto"}</strong>
                   {/* Last message */}
                   <p className="line-clamp-1 text-clip">{chat.lastMessage}</p>
                 </div>

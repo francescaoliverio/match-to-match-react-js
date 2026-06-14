@@ -27,8 +27,7 @@ export default function SearchResults() {
   // If not an existing category, return ErrorBox
   if (!catLoading && !matchedCategory) return (
     <ErrorBox>
-      <h2 className="-mt-2.5">Che peccato!</h2>
-      <p>Siamo spiacenti, ma la categoria <strong>{term}</strong> non esiste.</p>
+      Siamo spiacenti, ma la categoria <strong>{term}</strong> non esiste.
     </ErrorBox>
   )
 

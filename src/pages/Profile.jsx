@@ -25,7 +25,7 @@ export default function Profile() {
         </div>
         {/* User Name */}
         <div className="flex justify-center items-center gap-2.5">
-          <h3>{user.firstName}</h3>
+          <strong className="text-2xl">{user.firstName}</strong>
           <VerifiedOutlinedIcon className="text-tertiary" />
         </div>
         <div className="flex justify-center items-center gap-2.5">
@@ -44,7 +44,7 @@ export default function Profile() {
       </div>
       <footer className="flex flex-col gap-2.5">
         <div className="max-w-sm flex flex-col items-stretch gap-2.5 p-5 bg-tertiary text-light rounded-2xl shadow-md shadow-dark-overlay">
-          <h4>Impostazioni</h4>
+          <strong className="text-lg">Impostazioni</strong>
           <ul>
             <li>Verifica il tuo account</li>
             <li>Seleziona i tuoi interessi</li>
@@ -52,7 +52,7 @@ export default function Profile() {
           </ul>
         </div>
         <div className="max-w-sm flex flex-col items-stretch gap-2.5 p-5 bg-secondary text-ink rounded-2xl shadow-md shadow-dark-overlay">
-          <h4>Assistenza</h4>
+          <strong className="text-lg">Assistenza</strong>
           <ul>
             <li>Contattaci</li>
             <li>Segnala un utente</li>

@@ -22,7 +22,7 @@ export default function OpenChat({ onBack, className }) {
           <ArrowBackIosNewIcon />
         </Button>
         <img className="size-12 rounded-full" src="images/profile-pictures/pino-daniele.webp" />
-        <h4>Pino Daniele</h4>
+        <strong className="text-lg">Pino Daniele</strong>
       </div>
       {/* Messages */}
       <div className="flex-1 flex flex-col-reverse justify-start items-stretch gap-2.5 p-2.5 overflow-y-scroll scroll-smooth">

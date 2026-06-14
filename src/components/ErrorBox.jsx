@@ -9,7 +9,7 @@ export default function ErrorBox({ className, children }) {
     <div className={cn(ERROR_BOX_STYLES, className)}>
       <div className="flex justify-center items-center gap-2.5 mb-2.5">
         <ErrorOutlineOutlinedIcon />
-        <h4>Oh no!</h4>
+        <strong className="text-lg">Oh no!</strong>
       </div>
       {children}
     </div>

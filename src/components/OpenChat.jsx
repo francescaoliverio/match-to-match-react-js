@@ -45,8 +45,9 @@ export default function OpenChat({ onBack, className }) {
       </div>
       {/* Input bar */}
       <div className="p-5 bg-tertiary inline-flex gap-3 justify-start items-center">
-        <SearchBar className="grow" placeholder="type your message..." />
-        <Button variant="transparent" className="p-1.5 text-white hover:text-secondary">
+        <label htmlFor="chat-input" className="hidden">Message:</label>
+        <input id="chat-input" type="text" placeholder="scrivi il tuo messaggio..." className="flex items-center px-5 py-2.5 w-full rounded-full bg-white text-tertiary focus:outline-none focus:ring-2 ring-transparent-secondary" />
+        <Button variant="transparent" className="p-1.5 text-white hover:text-secondary -rotate-30">
           <Send />
         </Button>
       </div>

@@ -41,7 +41,7 @@ export default function SearchResults() {
       {/* Cards: show skeletons until users are fetched and filtered */}
       <div className={GRID_STYLES} style={{ gridTemplateColumns: `repeat(auto-fit, 12rem)` }}>
         {userLoading || catLoading
-          ? Array.from({ length: 5 }).map((_, i) => <CardSkeleton key={i} />)
+          ? Array.from({ length: 4 }).map((_, i) => <CardSkeleton key={i} />)
           : filtered?.map((user) => <Card key={user.id} obj={user} img={user.avatar} title={user.firstName} description={user.bio} variant="hoverScale" />)}
       </div>
     </section>

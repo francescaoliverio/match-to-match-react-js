@@ -1,13 +1,12 @@
-@import "tailwindcss";
-
+@import 'tailwindcss';
 
 @theme {
   /* ========== TYPOGRAPHY ========== */
   /* Headings */
-  --font-heading: "Gabarito", "Lexend", "Century Gothic", AppleGothic, sans-serif;
+  --font-heading: 'Gabarito', 'Lexend', 'Century Gothic', AppleGothic, sans-serif;
   /* Content */
-  --font-content: "Hanken Grotesk", "Inter", "Helvetica Neue", Helvetica, Arial, sans-serif;
-  
+  --font-content: 'Hanken Grotesk', 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
   /* ========== COLORS ========== */
   /* Brand */
   --color-primary: #ff6219;
@@ -57,7 +56,9 @@
     text-wrap: balance;
     font-family: var(--font-heading);
   }
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     font-weight: 700;
   }
   h1 {
@@ -79,7 +80,9 @@
     font-size: 1rem;
   }
   *:hover {
-    transition: color 150ms ease-in-out, background-color 150ms ease-in-out;
+    transition:
+      color 150ms ease-in-out,
+      background-color 150ms ease-in-out;
   }
   body {
     background-image: url(../assets/images/background/friends.jpg);

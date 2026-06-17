@@ -1,16 +1,16 @@
 // src/components/LoginForm.jsx
 
-import { useNavigate, Link } from "react-router-dom"
-import { useRef, useState } from "react"
-import { useAuth } from "../context/AuthContext"
-import Button from "./Button"
-import ErrorBox from "./ErrorBox"
+import { useNavigate, Link } from 'react-router-dom'
+import { useRef, useState } from 'react'
+import { useAuth } from '../context/AuthContext'
+import Button from './Button'
+import ErrorBox from './ErrorBox'
 
 // icons for password visibility
-import VisibilityOffOutlinedIcon from "@mui/icons-material/VisibilityOffOutlined"
-import VisibilityOutlinedIcon from "@mui/icons-material/VisibilityOutlined"
+import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
+import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 
-const inputStyle = "flex items-center px-5 py-2.5 w-full rounded-full bg-white text-tertiary focus:outline-none focus:ring-2 ring-transparent-secondary shadow-md shadow-dark-overlay disabled:cursor-default"
+const inputStyle = 'flex items-center px-5 py-2.5 w-full rounded-full bg-white text-tertiary focus:outline-none focus:ring-2 ring-transparent-secondary shadow-md shadow-dark-overlay disabled:cursor-default'
 
 export default function LoginForm() {
   const navigate = useNavigate()
@@ -34,19 +34,19 @@ export default function LoginForm() {
     try {
       // fetch: in const "res" save response from API (promise)
       const res = await fetch(`/api/users?email=${email}`)
-      if (!res.ok) throw new Error("Errore di connessione al server")
+      if (!res.ok) throw new Error('Errore di connessione al server')
       // resolve promise, than convert "res" to json
       const usersFound = await res.json()
       // print usersFound to console
-      console.log("Users found:", usersFound)
+      console.log('Users found:', usersFound)
       // check if user is found and password matches
       if (usersFound.length === 0 || usersFound[0].password !== password) {
-        throw new Error("Email o password errati. Riprova.")
+        throw new Error('Email o password errati. Riprova.')
       }
       // if all good, save logged in user and go to profile
       const loggedInUser = usersFound[0]
       login(loggedInUser)
-      navigate("/profile")
+      navigate('/profile')
     } catch (error) {
       setLoginError(error.message)
       console.error(error)
@@ -54,29 +54,37 @@ export default function LoginForm() {
   }
 
   return (
-    <div className="max-w-sm flex flex-col items-stretch gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay">
+    <div className='max-w-sm flex flex-col items-stretch gap-5 p-5 bg-transparent-tertiary text-white rounded-2xl shadow-md shadow-dark-overlay'>
       {/* Logo */}
-      <div className="size-20 rounded-full self-center flex justify-center items-center bg-tertiary">
-        <img src="/logo/logo-bg-transparent.svg" alt="Match to Match logo" className="size-12" />
+      <div className='size-20 rounded-full self-center flex justify-center items-center bg-tertiary'>
+        <img src='/logo/logo-bg-transparent.svg' alt='Match to Match logo' className='size-12' />
       </div>
       {/* Form */}
-      <form onSubmit={submitForm} className="flex flex-col items-center gap-5">
+      <form onSubmit={submitForm} className='flex flex-col items-center gap-5'>
         {/* Email */}
-        <label htmlFor="email" className="hidden">Email:</label>
-        <input ref={emailRef} id="email" type="email" placeholder="Email" className={inputStyle} autoComplete="email" required />
+        <label htmlFor='email' className='hidden'>
+          Email:
+        </label>
+        <input ref={emailRef} id='email' type='email' placeholder='Email' className={inputStyle} autoComplete='email' required />
         {/* Password */}
-        <label htmlFor="password" className="hidden">Password:</label>
-        <div className="relative w-full">
-          <input ref={passwordRef} id="password" type={showPassword ? "text" : "password"} placeholder="Password" className={`${inputStyle} pr-12`} onBlur={() => setShowPassword(false)} required />
+        <label htmlFor='password' className='hidden'>
+          Password:
+        </label>
+        <div className='relative w-full'>
+          <input ref={passwordRef} id='password' type={showPassword ? 'text' : 'password'} placeholder='Password' className={`${inputStyle} pr-12`} onBlur={() => setShowPassword(false)} required />
           {/* Show/hide password 👁️ */}
-          <button type="button" onClick={() => setShowPassword(!showPassword)} className="absolute right-4 top-1/2 -translate-y-1/2 text-tertiary hover:cursor-pointer flex items-center justify-center" aria-label={showPassword ? "Nascondi password" : "Mostra password"}>
+          <button
+            type='button'
+            onClick={() => setShowPassword(!showPassword)}
+            className='absolute right-4 top-1/2 -translate-y-1/2 text-tertiary hover:cursor-pointer flex items-center justify-center'
+            aria-label={showPassword ? 'Nascondi password' : 'Mostra password'}>
             {showPassword ? <VisibilityOffOutlinedIcon /> : <VisibilityOutlinedIcon />}
           </button>
         </div>
         {/* Error box if login goes wrong */}
-        {loginError && <ErrorBox className="m-0 w-full">{loginError}</ErrorBox>}
-        <Link to="">password dimenticata?</Link>
-        <Button label="Accedi" variant="primary" type="submit" />
+        {loginError && <ErrorBox className='m-0 w-full'>{loginError}</ErrorBox>}
+        <Link to=''>password dimenticata?</Link>
+        <Button label='Accedi' variant='primary' type='submit' />
       </form>
     </div>
   )

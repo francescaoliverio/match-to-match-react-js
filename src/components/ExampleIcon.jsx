@@ -1,9 +1,9 @@
-import AddOutlinedIcon from "@mui/icons-material/AddOutlined";
+import AddOutlinedIcon from '@mui/icons-material/AddOutlined'
 
 export default function Icon() {
   return (
     <>
-      <AddOutlinedIcon color="#000" fontSize="large" />
+      <AddOutlinedIcon color='#000' fontSize='large' />
     </>
-  );
+  )
 }

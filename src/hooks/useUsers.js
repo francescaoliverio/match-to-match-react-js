@@ -1,6 +1,6 @@
 // src/hooks/useUsers.js
 
-import { useEffect, useState } from "react"
+import { useEffect, useState } from 'react'
 
 export function useUsers() {
   const [users, setUsers] = useState(null)
@@ -10,14 +10,14 @@ export function useUsers() {
   useEffect(() => {
     const fetchUsers = async () => {
       try {
-        const response = await fetch("/api/users")
+        const response = await fetch('/api/users')
         if (!response.ok) {
-          throw new Error("Impossibile caricare gli utenti")
+          throw new Error('Impossibile caricare gli utenti')
         }
         const data = await response.json()
         setUsers(data)
       } catch (err) {
-        setError(err.message || "Connessione al server fallita")
+        setError(err.message || 'Connessione al server fallita')
         console.error(err)
       } finally {
         setLoading(false)

@@ -1,6 +1,6 @@
 // src/hooks/useHandleMatch.js
 
-import { useState } from "react"
+import { useState } from 'react'
 
 export function useHandleMatch() {
   const [loading, setLoading] = useState(false)
@@ -11,14 +11,14 @@ export function useHandleMatch() {
     setError(null)
 
     try {
-      const response = await fetch("/api/matches", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/matches', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           user1Id: matchData.user1Id,
           user2Id: matchData.user2Id,
-          status: "confirmed",
-          notes: matchData.notes ?? "",
+          status: 'confirmed',
+          notes: matchData.notes ?? '',
         }),
       })
       // console.log("Response:", response)
@@ -37,9 +37,9 @@ export function useHandleMatch() {
 
     try {
       const response = await fetch(`/api/matches/${matchId}`, {
-        method: "PATCH",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ status: "cancelled" }),
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: 'cancelled' }),
       })
       // console.log("Response:", response)
       // const data = await response.json()

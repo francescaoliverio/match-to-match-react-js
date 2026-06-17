@@ -29,7 +29,7 @@ export default function Card({ obj, img, title, description, buttons = false, on
           <Button variant="primary" className={cn("p-2.5", clicked==="reject" && "invisible")} onClick={() => {setClicked("accept"); onAccept}}>
             <CheckOutlinedIcon />
           </Button>
-          <Button variant="secondary" className={cn("p-2.5", clicked==="accept" && "invisible")}  onClick={() => {setClicked("reject"); onAccept}}>
+          <Button variant="secondary" className={cn("p-2.5", clicked==="accept" && "invisible")}  onClick={() => {setClicked("reject"); onReject}}>
             <CloseOutlinedIcon />
           </Button>
         </div>

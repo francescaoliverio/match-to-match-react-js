@@ -1,13 +1,14 @@
 # Match to Match
 
 > **Connect. Play. Repeat.**
-> A mobile + web app to find, meet, and challenge new people in real life, bringing together those who share the same passion for sports and games.
+>
+> A web app to find, meet, and challenge new people in real life, bringing together those who share the same passion for sports and games.
 
 ---
 
 ## Project Description
 
-**Match to Match** addresses a real and growing need: human relationships are becoming increasingly virtual, communication is deteriorating, and social isolation is on the rise — especially among young people aged 16 and up, an age group where making new connections is particularly challenging.
+**Match to Match** addresses a real and growing need: human relationships are becoming increasingly virtual, communication is deteriorating, and social isolation is on the rise.
 
 The app allows users to find people with shared hobbies (sports, video games, board games, and role-playing games), propose or accept a "match", and meet up in person.
 
@@ -77,7 +78,7 @@ The app allows users to find people with shared hobbies (sports, video games, bo
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/francescaoliverio/match-to-match-react-js
 
 # Enter the project folder
 cd match-to-match
@@ -97,7 +98,7 @@ The standard commit format is:
 
 ```
 // [This commit will...]
-type(scope): short description   (max 50 characters)
+type(scope): short description   (max 72 characters)
 ```
 
 | Type | When to use | Example |
@@ -108,7 +109,6 @@ type(scope): short description   (max 50 characters)
 | `style` | Pure formatting, zero logic | `style(app): indentation and commas` |
 | `docs` | Documentation only | `docs(readme): update README` |
 | `test` | Add or fix tests | `test(button): add unit test` |
-| `build` | Dependencies and build system | `build: update vite.config` |
 | `chore` | General maintenance | `chore: update .gitignore` |
 | `perf` | Performance optimization | `perf: reduce re-renders with lazy loading` |
 | `revert` | Undo a previous commit | `revert: —` |
@@ -117,7 +117,7 @@ type(scope): short description   (max 50 characters)
 
 ## Authors
 
-| Name | Role |
+| Name | Page |
 |---|---|
 | Gaia Giachero | Explore |
 | Alessia Masuzzo | Match |

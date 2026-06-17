@@ -5,6 +5,7 @@ import Card, { CardSkeleton } from "./Card"
 import ErrorBox from "./ErrorBox"
 import { GRID_STYLES } from "../styles/styles"
 import { cn } from "../lib/utils"
+import { Link } from "react-router-dom"
 
 export default function CategoriesGrid({ cols = 5, rows = 1, className }) {
   const limit = cols * rows

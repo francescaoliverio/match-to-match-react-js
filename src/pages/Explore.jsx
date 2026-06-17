@@ -1,16 +1,17 @@
 // src/pages/Explore.jsx
 
 import { useRef } from 'react'
+import Button from '../components/Button'
 import MatchSearch from '../components/MatchSearch'
 import UsersGrid from '../components/UsersGrid'
 import CategoriesGrid from '../components/CategoriesGrid'
-import Button from '../components/Button'
 import ArrowBackIosOutlinedIcon from '@mui/icons-material/ArrowBackIosOutlined'
 import ArrowForwardIosOutlinedIcon from '@mui/icons-material/ArrowForwardIosOutlined'
+
 import { SECTION_STYLES } from '../styles/styles'
 
 export default function Explore() {
-  // for categories carousel
+  // useRef for categories carousel
   const carouselRef = useRef(null)
   const scroll = (direction) => {
     if (carouselRef.current) {
@@ -35,12 +36,15 @@ export default function Explore() {
       <section className={SECTION_STYLES}>
         <h2 className='text-center text-shadow-lg/20 text-shadow-light'>Esplora le categorie</h2>
         <div className='w-full flex flex-row justify-center items-center gap-5'>
+          {/* Left carousel scroll btn */}
           <Button onClick={() => scroll('left')} className='p-2.5'>
             <ArrowBackIosOutlinedIcon />
           </Button>
+          {/* Categories cards carousel */}
           <div ref={carouselRef} className='p-2.5 overflow-y-visible overflow-x-auto scrollbar-none [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none]'>
             <CategoriesGrid className='w-fit' />
           </div>
+          {/* Right carousel scroll btn */}
           <Button onClick={() => scroll('right')} className='p-2.5'>
             <ArrowForwardIosOutlinedIcon />
           </Button>

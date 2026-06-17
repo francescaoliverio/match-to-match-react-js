@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react'
 import { cn } from '../lib/utils'
 import { SECTION_STYLES } from '../styles/styles'
 
+// Show chatlist or open chat on small screens, otherwise show both side-by-side
 export default function Chat() {
   const [activeChat, setActiveChat] = useState(null)
 

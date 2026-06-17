@@ -23,7 +23,7 @@ export default function Profile() {
         <div className='size-20 rounded-full overflow-hidden flex justify-center items-center bg-tertiary'>
           <img src={user.avatar} alt='profile picture' />
         </div>
-        {/* User Name */}
+        {/* User Info */}
         <div className='flex justify-center items-center gap-2.5'>
           <strong className='text-2xl'>{user.firstName}</strong>
           <VerifiedOutlinedIcon className='text-tertiary' />
@@ -42,6 +42,7 @@ export default function Profile() {
         </div>
         <p>{user.bio}</p>
       </div>
+      {/* Footer: Settings and Help (placeholders) */}
       <footer className='flex flex-col gap-2.5'>
         <div className='max-w-sm flex flex-col items-stretch gap-2.5 p-5 bg-tertiary text-light rounded-2xl shadow-md shadow-dark-overlay'>
           <strong className='text-lg'>Impostazioni</strong>

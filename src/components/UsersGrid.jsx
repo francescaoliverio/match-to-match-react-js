@@ -8,15 +8,16 @@ import { GRID_STYLES } from '../styles/styles'
 import { cn } from '../lib/utils'
 
 export default function UsersGrid({ cols = 3, rows = 2, pending = false, className }) {
+  // Calculate number of cards and grid template
   const limit = cols * rows
   const gridTemplate = {
     maxWidth: `${cols * 12 + (cols - 1) * 2}rem`,
     gridTemplateColumns: `repeat(auto-fit, 12rem)`,
   }
-  // store return values from useUsers()
+  // Store return values from useUsers() and useHandleMatch()
   const { users, loading, error } = useUsers()
   const { confirmMatch, cancelMatch } = useHandleMatch()
-  // if error, return error
+  // Handle error
   if (error)
     return (
       <ErrorBox>
@@ -24,7 +25,7 @@ export default function UsersGrid({ cols = 3, rows = 2, pending = false, classNa
         {error}
       </ErrorBox>
     )
-  // skeleton while loading: prevent rendering users.map before promise is resolved
+  // Cards: show card skeletons while loading cards content
   return (
     <div className={cn(GRID_STYLES, className)} style={gridTemplate}>
       {loading

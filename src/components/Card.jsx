@@ -14,9 +14,11 @@ const VARIANT_STYLES = {
   hoverScale: 'hover:scale-105 transition-transform motion-reduce:transition-none motion-reduce:hover:transform-none',
 }
 
-// Card: display picture, name and bio of provided person
+// Card: display image, title, and description of provided object
+// Match cards can have buttons to trigger "accept" or "reject"
 export default function Card({ obj, img, title, description, buttons = false, onAccept, onReject, className, variant = 'none', ...props }) {
-  const [clicked, setClicked] = useState(null)
+  // For match cards: track which button is clicked
+  const [clicked, setClicked] = useState(null) // null | "accept" | "reject"
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
       <img src={img} alt={title} />
@@ -26,6 +28,7 @@ export default function Card({ obj, img, title, description, buttons = false, on
       </div>
       {buttons && (
         <div className='flex flex-row justify-between m-2.5'>
+          {/* Accept Button */}
           <Button
             variant='primary'
             className={cn('p-2.5', clicked === 'reject' && 'invisible')}
@@ -35,6 +38,7 @@ export default function Card({ obj, img, title, description, buttons = false, on
             }}>
             <CheckOutlinedIcon />
           </Button>
+          {/* Rejrct Button */}
           <Button
             variant='secondary'
             className={cn('p-2.5', clicked === 'accept' && 'invisible')}

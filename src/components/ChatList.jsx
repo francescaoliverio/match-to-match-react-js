@@ -54,6 +54,7 @@ export default function ChatList({ onSelectChat, activeChatId, className }) {
           })}
         </div>
       ) : (
+        // Skeleton (while fetching chats)
         <div className='flex flex-row items-center gap-5 p-5 mt-5 bg-white rounded-2xl shadow-md shadow-dark-overlay animate-pulse hover:cursor-progress'>
           <div className='size-12 rounded-full bg-grey-lighter' />
           <p className='text-grey-light'>Caricamento...</p>

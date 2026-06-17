@@ -1,3 +1,5 @@
+// src/components/Button.jsx
+
 import { cn } from '../lib/utils'
 
 const BASE_STYLES = 'flex items-center justify-center gap-2.5 px-5 py-2.5 rounded-full w-fit shadow-md shadow-dark-overlay font-bold cursor-pointer disabled:cursor-default'

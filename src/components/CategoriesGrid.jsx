@@ -8,14 +8,14 @@ import { cn } from '../lib/utils'
 import { Link } from 'react-router-dom'
 
 export default function CategoriesGrid({ cols = 5, rows = 1, className }) {
+  // Calculate number of cards and grid template
   const limit = cols * rows
   const gridTemplate = {
     maxWidth: `${cols * 12 + (cols - 1) * 2}rem`,
     gridTemplateColumns: `repeat(auto-fit, 12rem)`,
   }
-  // store return values from useCategories()
+  // Store return values from useCategories()
   const { categories, loading, error } = useCategories()
-  // if error, return error
   if (error)
     return (
       <ErrorBox>
@@ -23,7 +23,7 @@ export default function CategoriesGrid({ cols = 5, rows = 1, className }) {
         {error}
       </ErrorBox>
     )
-  // skeleton while loading: prevent rendering categories.map before promise is resolved
+  // Cards: show card skeletons while loading cards content
   return (
     <div className={cn(GRID_STYLES, className)} style={gridTemplate}>
       {loading

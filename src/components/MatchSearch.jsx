@@ -1,21 +1,22 @@
+// src/components/MatchSearch.jsx
+
 import { useState, useRef } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-
+import Button from './Button'
 import SearchBar from './SearchBar'
-import Button from '../components/Button'
 import CategoryOutlinedIcon from '@mui/icons-material/CategoryOutlined'
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined'
 import CalendarTodayOutlinedIcon from '@mui/icons-material/CalendarTodayOutlined'
 import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined'
 
 export default function MatchSearch() {
-  const [active, setActive] = useState('what')
-
+  const navigate = useNavigate()
+  // useState to set active input field
+  const [active, setActive] = useState('what') // "what" | "where" | "when"
   function handleClick(target) {
     setActive(target)
   }
-
-  const navigate = useNavigate()
+  // useRef to get search term
   const searchRef = useRef('')
   function handleSearch() {
     const term = searchRef.current.value?.trim().toLowerCase()
@@ -24,6 +25,7 @@ export default function MatchSearch() {
 
   return (
     <div className='bg-transparent-tertiary flex items-center justify-center p-3.5 gap-5 rounded-full w-fit'>
+      {/* What (category) */}
       <div onClick={() => handleClick('what')}>
         {active === 'what' ? (
           <SearchBar id='what' ref={searchRef} placeholder='what...' variant='white' className='flex-2 flex-row-reverse p-2.5 gap-2.5'>
@@ -37,6 +39,7 @@ export default function MatchSearch() {
           </label>
         )}
       </div>
+      {/* Where (place) */}
       <div onClick={() => handleClick('where')}>
         {active === 'where' ? (
           <SearchBar id='where' placeholder='where...' variant='white' className='flex-2 flex-row-reverse p-2.5 gap-2.5'>
@@ -50,6 +53,7 @@ export default function MatchSearch() {
           </label>
         )}
       </div>
+      {/* When (date) */}
       <div onClick={() => handleClick('when')}>
         {active === 'when' ? (
           <SearchBar id='when' placeholder='when...' variant='white' className='flex-2 flex-row-reverse p-2.5 gap-2.5'>
@@ -63,6 +67,7 @@ export default function MatchSearch() {
           </label>
         )}
       </div>
+      {/* Search button (go to search results page) */}
       <Button onClick={handleSearch} label='search' variant='primary'>
         <SearchOutlinedIcon />
       </Button>

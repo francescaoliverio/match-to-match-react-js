@@ -6,7 +6,7 @@ import { useAuth } from '../context/AuthContext'
 import Button from './Button'
 import ErrorBox from './ErrorBox'
 
-// icons for password visibility
+// 👁️ Show/hide password icons
 import VisibilityOffOutlinedIcon from '@mui/icons-material/VisibilityOffOutlined'
 import VisibilityOutlinedIcon from '@mui/icons-material/VisibilityOutlined'
 
@@ -14,16 +14,18 @@ const inputStyle = 'flex items-center px-5 py-2.5 w-full rounded-full bg-white t
 
 export default function LoginForm() {
   const navigate = useNavigate()
+  // Auth hook
   const { login } = useAuth()
-
+  // Input refs
   const emailRef = useRef(null)
   const passwordRef = useRef(null)
-
+  // useStates for show/hide pwd btn and login errors
   const [showPassword, setShowPassword] = useState(false)
   const [loginError, setLoginError] = useState(null)
 
+  // On submit fetch credentials and check if valid
   async function submitForm(e) {
-    // prevent default action when button is clicked
+    // Prevent default action when button is clicked
     e.preventDefault()
     setLoginError(null)
 
@@ -32,18 +34,13 @@ export default function LoginForm() {
     const password = passwordRef.current.value
 
     try {
-      // fetch: in const "res" save response from API (promise)
       const res = await fetch(`/api/users?email=${email}`)
       if (!res.ok) throw new Error('Errore di connessione al server')
-      // resolve promise, than convert "res" to json
       const usersFound = await res.json()
-      // print usersFound to console
-      console.log('Users found:', usersFound)
-      // check if user is found and password matches
       if (usersFound.length === 0 || usersFound[0].password !== password) {
         throw new Error('Email o password errati. Riprova.')
       }
-      // if all good, save logged in user and go to profile
+      // If credentials match (and no error), login and go to profile
       const loggedInUser = usersFound[0]
       login(loggedInUser)
       navigate('/profile')
@@ -83,7 +80,9 @@ export default function LoginForm() {
         </div>
         {/* Error box if login goes wrong */}
         {loginError && <ErrorBox className='m-0 w-full'>{loginError}</ErrorBox>}
+        {/* Forgot password */}
         <Link to=''>password dimenticata?</Link>
+        {/* Login button */}
         <Button label='Accedi' variant='primary' type='submit' />
       </form>
     </div>

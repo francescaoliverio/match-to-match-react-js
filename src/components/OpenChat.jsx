@@ -18,13 +18,16 @@ export default function OpenChat({ onBack, className }) {
     <div className={cn('bg-transparent-white h-full rounded-4xl flex flex-col justify-stretch items-stretch overflow-hidden', className)}>
       {/* Header */}
       <div className='p-2.5 bg-secondary flex justify-start items-center gap-5'>
+        {/* Back button for small screens */}
         <Button variant='transparent' className='p-1.5 md:hidden text-ink' onClick={onBack}>
           <ArrowBackIosNewIcon />
         </Button>
+        {/* Profile picture */}
         <img className='size-12 rounded-full' src='images/profile-pictures/pino-daniele.webp' />
+        {/* User name */}
         <strong className='text-lg'>Pino Daniele</strong>
       </div>
-      {/* Messages */}
+      {/* Messages (ordered from most recent) */}
       <div className='flex-1 flex flex-col-reverse justify-start items-stretch gap-2.5 p-2.5 overflow-y-scroll scroll-smooth'>
         {/* --- OGGI --- */}
         <div className={cn(MSG_BASE_STYLES, MSG_VARIANT_STYLES['toYou'])}>Confermato per domenica, partenza dalla piazza!</div>
@@ -49,6 +52,7 @@ export default function OpenChat({ onBack, className }) {
           Message:
         </label>
         <input id='chat-input' type='text' placeholder='scrivi il tuo messaggio...' className='flex items-center px-5 py-2.5 w-full rounded-full bg-white text-tertiary focus:outline-none focus:ring-2 ring-transparent-secondary' />
+        {/* Send button */}
         <Button variant='transparent' className='p-1.5 text-white hover:text-secondary -rotate-30'>
           <Send />
         </Button>

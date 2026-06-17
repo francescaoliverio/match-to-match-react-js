@@ -1,7 +1,10 @@
+// src/components/TopNavBar.jsx
+
 import Button from './Button'
 import { Link } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
+// Show login btn (not logged in) or name + logout btn (logged in)
 export default function TopNavBar() {
   const { logout } = useAuth()
   const { user } = useAuth()

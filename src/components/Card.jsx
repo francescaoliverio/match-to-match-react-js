@@ -33,8 +33,8 @@ export default function Card({ obj, img, title, description, buttons = false, on
             variant='primary'
             className={cn('p-2.5', clicked === 'reject' && 'invisible')}
             onClick={() => {
+              onAccept()
               setClicked('accept')
-              onAccept
             }}>
             <CheckOutlinedIcon />
           </Button>
@@ -43,8 +43,8 @@ export default function Card({ obj, img, title, description, buttons = false, on
             variant='secondary'
             className={cn('p-2.5', clicked === 'accept' && 'invisible')}
             onClick={() => {
+              onReject()
               setClicked('reject')
-              onReject
             }}>
             <CloseOutlinedIcon />
           </Button>

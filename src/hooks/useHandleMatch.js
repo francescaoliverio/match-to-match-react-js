@@ -21,9 +21,8 @@ export function useHandleMatch() {
           notes: matchData.notes ?? '',
         }),
       })
-      // console.log("Response:", response)
-      // const data = await response.json()
-      // console.log("Match confermato:", data)
+      const data = await response.json()
+      console.log("Match confermato:", data)
     } catch (err) {
       setError(err.message)
     } finally {
@@ -41,9 +40,8 @@ export function useHandleMatch() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'cancelled' }),
       })
-      // console.log("Response:", response)
-      // const data = await response.json()
-      // console.log("Match cancellato:", data)
+      const data = await response.json()
+      console.log("Match cancellato:", data)
     } catch (err) {
       setError(err.message)
     } finally {

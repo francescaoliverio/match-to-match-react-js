@@ -4,6 +4,7 @@ import { cn } from "../lib/utils";
 import Button from "./Button";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import { useState } from "react";
 
 const BASE_STYLES = "flex flex-col justify-stretch rounded-2xl w-full bg-white shadow-md shadow-dark-overlay overflow-hidden cursor-pointer disabled:cursor-default";
 
@@ -15,6 +16,7 @@ const VARIANT_STYLES = {
 
 // Card: display picture, name and bio of provided person
 export default function Card({ obj, img, title, description, buttons = false, onAccept, onReject, className, variant = "none", ...props }) {
+  const [clicked, setClicked] = useState(null)
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
       <img src={img} alt={title} />
@@ -24,10 +26,10 @@ export default function Card({ obj, img, title, description, buttons = false, on
       </div>
       {buttons && (
         <div className="flex flex-row justify-between m-2.5">
-          <Button variant="primary" className="p-2.5" onClick={onAccept}>
+          <Button variant="primary" className={cn("p-2.5", clicked==="reject" && "invisible")} onClick={() => {setClicked("accept"); onAccept}}>
             <CheckOutlinedIcon />
           </Button>
-          <Button variant="secondary" className="p-2.5" onClick={onReject}>
+          <Button variant="secondary" className={cn("p-2.5", clicked==="accept" && "invisible")}  onClick={() => {setClicked("reject"); onReject}}>
             <CloseOutlinedIcon />
           </Button>
         </div>

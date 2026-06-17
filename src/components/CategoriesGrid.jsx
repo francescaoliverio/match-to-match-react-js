@@ -23,11 +23,13 @@ export default function CategoriesGrid({ cols = 5, rows = 1, className }) {
   return (
     <div className={cn(GRID_STYLES, className)} style={gridTemplate}>
       {loading
-        ? Array.from({ length: limit }).map((_, i) =>
+        ? Array.from({ length: limit }).map((_, i) => 
           <CardSkeleton key={i} />)
-        : categories?.slice(0, limit).map((cat) =>
-          <Card key={cat.id} obj={cat} img={cat.image} title={cat.name} description={cat.description} variant="hoverScale" />)
-      }
+        : categories?.slice(0, limit).map((cat) => (
+            <Link to={`/results?q=${cat.name}`}>
+              <Card key={cat.id} obj={cat} img={cat.image} title={cat.name} description={cat.description} variant="hoverScale" />)
+            </Link>
+          ))}
     </div>
-  )
+  );
 }

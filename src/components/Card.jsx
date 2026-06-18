@@ -16,12 +16,12 @@ const VARIANT_STYLES = {
 
 // Card: display image, title, and description of provided object
 // Match cards can have buttons to trigger "accept" or "reject"
-export default function Card({ obj, img, title, description, buttons = false, onAccept, onReject, className, variant = 'none', ...props }) {
+export default function Card({ obj, img, imgHeight = 'h-48', title, description, buttons = false, onAccept, onReject, className, variant = 'none', ...props }) {
   // For match cards: track which button is clicked
   const [clicked, setClicked] = useState(null) // null | "accept" | "reject"
   return (
     <div className={cn(BASE_STYLES, VARIANT_STYLES[variant], className)} {...props}>
-      <img src={img} alt={title} />
+      <img src={img} alt={title} className={cn('w-full object-cover', imgHeight)} />
       <div className='p-2.5'>
         <strong className='text-lg'>{title}</strong>
         <p className='line-clamp-3'>{description}</p>

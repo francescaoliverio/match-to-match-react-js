@@ -30,7 +30,7 @@ export default function CategoriesGrid({ cols = 5, rows = 1, className }) {
         ? Array.from({ length: limit }).map((_, i) => <CardSkeleton key={i} />)
         : categories?.slice(0, limit).map((cat) => (
             <Link key={cat.id} to={`/results?q=${cat.name}`}>
-              <Card obj={cat} img={cat.image} title={cat.name} description={cat.description} variant='hoverScale' />
+              <Card obj={cat} img={cat.image} imgHeight='h-32' title={cat.name} description={cat.description} variant='hoverScale' />
             </Link>
           ))}
     </div>

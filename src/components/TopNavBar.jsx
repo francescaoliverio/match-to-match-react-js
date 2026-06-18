@@ -12,9 +12,11 @@ export default function TopNavBar() {
   return (
     <nav className='bg-tertiary text-white z-10 flex flex-row justify-between items-center px-5 py-2.5'>
       {/* Logo */}
-      <div className='size-10 rounded-full self-center flex justify-center items-center bg-tertiary'>
-        <img src='/logo/logo-bg-transparent.svg' alt='Match to Match logo' className='size-12' />
-      </div>
+      <Link to='/'>
+        <div className='size-10 rounded-full self-center flex justify-center items-center bg-tertiary'>
+          <img src='/logo/logo-bg-transparent.svg' alt='Match to Match logo' className='size-12' />
+        </div>
+      </Link>
       {user ? (
         <div className='flex flex-row items-center gap-5'>
           {/* User Name */}

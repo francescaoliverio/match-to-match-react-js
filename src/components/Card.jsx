@@ -38,7 +38,7 @@ export default function Card({ obj, img, imgHeight = 'h-48', title, description,
             }}>
             <CheckOutlinedIcon />
           </Button>
-          {/* Rejrct Button */}
+          {/* Reject Button */}
           <Button
             variant='secondary'
             className={cn('p-2.5', clicked === 'accept' && 'invisible')}

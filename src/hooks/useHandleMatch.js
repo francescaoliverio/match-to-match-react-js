@@ -21,29 +21,35 @@ export function useHandleMatch() {
           notes: matchData.notes ?? '',
         }),
       })
+      if (!response.ok) {
+        throw new Error('Non è stato possibile confermare il match')
+      }
       const data = await response.json()
       console.log("Match confermato:", data)
     } catch (err) {
-      setError(err.message)
+      setError(err.message || 'Connessione al server fallita')
     } finally {
       setLoading(false)
     }
   }
-
+  
   const cancelMatch = async (matchId) => {
     setLoading(true)
     setError(null)
-
+    
     try {
       const response = await fetch(`/api/matches/${matchId}`, {
         method: 'PATCH',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'cancelled' }),
       })
+      if (!response.ok) {
+        throw new Error('Non è stato possibile cancellare il match')
+      }
       const data = await response.json()
       console.log("Match cancellato:", data)
     } catch (err) {
-      setError(err.message)
+      setError(err.message || 'Connessione al server fallita')
     } finally {
       setLoading(false)
     }
